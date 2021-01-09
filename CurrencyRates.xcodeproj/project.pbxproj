@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EE7625A1B59D001F1227 /* AppDelegate.swift */; };
 		4252EE7925A1B59D001F1227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EE7825A1B59D001F1227 /* SceneDelegate.swift */; };
-		4252EE7B25A1B59D001F1227 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EE7A25A1B59D001F1227 /* ViewController.swift */; };
 		4252EE7E25A1B59D001F1227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4252EE7C25A1B59D001F1227 /* Main.storyboard */; };
 		4252EE8025A1B59E001F1227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4252EE7F25A1B59E001F1227 /* Assets.xcassets */; };
 		4252EE8325A1B59E001F1227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4252EE8125A1B59E001F1227 /* LaunchScreen.storyboard */; };
@@ -23,13 +22,14 @@
 		4252EEAC25A1D88C001F1227 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEAB25A1D88C001F1227 /* NetworkService.swift */; };
 		4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */; };
 		4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEB825A1E70C001F1227 /* MainViewController.swift */; };
+		42D73DCD25A89BB700E699B2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D73DCC25A89BB700E699B2 /* Currency.swift */; };
+		42D73DD625A8A26B00E699B2 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D73DD525A8A26B00E699B2 /* Descriptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4252EE7325A1B59D001F1227 /* CurrencyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4252EE7625A1B59D001F1227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4252EE7825A1B59D001F1227 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4252EE7A25A1B59D001F1227 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4252EE7D25A1B59D001F1227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4252EE7F25A1B59E001F1227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4252EE8225A1B59E001F1227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +44,8 @@
 		4252EEAB25A1D88C001F1227 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		4252EEB825A1E70C001F1227 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		42D73DCC25A89BB700E699B2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		42D73DD525A8A26B00E699B2 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +79,12 @@
 		4252EE7525A1B59D001F1227 /* CurrencyRates */ = {
 			isa = PBXGroup;
 			children = (
+				42D73DD425A8A23F00E699B2 /* Utilities */,
+				42D73DCB25A89B9900E699B2 /* Entities */,
 				4252EEAA25A1D555001F1227 /* ServicesLayers */,
 				4252EE8F25A1BB28001F1227 /* Modules */,
 				4252EE7625A1B59D001F1227 /* AppDelegate.swift */,
 				4252EE7825A1B59D001F1227 /* SceneDelegate.swift */,
-				4252EE7A25A1B59D001F1227 /* ViewController.swift */,
 				4252EE7C25A1B59D001F1227 /* Main.storyboard */,
 				4252EE7F25A1B59E001F1227 /* Assets.xcassets */,
 				4252EE8125A1B59E001F1227 /* LaunchScreen.storyboard */,
@@ -135,6 +138,22 @@
 				4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		42D73DCB25A89B9900E699B2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				42D73DCC25A89BB700E699B2 /* Currency.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		42D73DD425A8A23F00E699B2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				42D73DD525A8A26B00E699B2 /* Descriptions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,16 +229,17 @@
 			files = (
 				4252EEAC25A1D88C001F1227 /* NetworkService.swift in Sources */,
 				4252EE9425A1BBFB001F1227 /* ApplicationAboutConfigurator.swift in Sources */,
-				4252EE7B25A1B59D001F1227 /* ViewController.swift in Sources */,
 				4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */,
 				4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */,
 				4252EE9B25A1BFE8001F1227 /* ApplicationAboutViewController.swift in Sources */,
 				4252EEA725A1C2F3001F1227 /* ApplicationAboutInteractor.swift in Sources */,
+				42D73DCD25A89BB700E699B2 /* Currency.swift in Sources */,
 				4252EEA125A1C129001F1227 /* ApplicationAboutPresenter.swift in Sources */,
 				4252EE7925A1B59D001F1227 /* SceneDelegate.swift in Sources */,
 				4252EE9825A1BF5C001F1227 /* ApplicationAboutProtocols.swift in Sources */,
 				4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */,
 				4252EEA425A1C13B001F1227 /* ApplicationAboutRouter.swift in Sources */,
+				42D73DD625A8A26B00E699B2 /* Descriptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

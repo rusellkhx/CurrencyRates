@@ -11,7 +11,7 @@ class ApplicationAboutRouter: ApplicationAboutRouterProtocol {
     
     weak var viewController: ApplicationAboutViewController!
     
-    init(viewController: ApplicationAboutViewController) {
+    required init(viewController: ApplicationAboutViewController) {
         self.viewController = viewController
     }
     

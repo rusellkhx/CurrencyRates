@@ -8,9 +8,22 @@
 import UIKit
 
 class NetworkService: NetworkServiceProtocol {
+    // MARK: Properties
+    
     var urlRatesSource: String {
         return "https://free.currencyconverterapi.com"
     }
+    
+    // MARK: Properties
+    func getAllCurrencies(completion: @escaping ([String : Any]?, Error?) -> Void) {
+        <#code#>
+    }
+    
+    func getRatio(inputCurrencyShortName: String, outputCurrencyShortName: String, completion: @escaping ([String : Any]?, Error?) -> Void) {
+        <#code#>
+    }
+    
+   
     
     func openUrl(urlString: String) {
         if let url = URL(string: urlString) {
