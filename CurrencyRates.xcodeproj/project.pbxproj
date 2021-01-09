@@ -134,10 +134,26 @@
 		4252EEAE25A1D8B2001F1227 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				42CACA6325A9B2E100E38C83 /* DataFetcherService */,
+				42CACA6225A9B2C800E38C83 /* NetworkService */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		42CACA6225A9B2C800E38C83 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
 				4252EEAB25A1D88C001F1227 /* NetworkService.swift */,
 				4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */,
 			);
-			name = Network;
+			name = NetworkService;
+			sourceTree = "<group>";
+		};
+		42CACA6325A9B2E100E38C83 /* DataFetcherService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataFetcherService;
 			sourceTree = "<group>";
 		};
 		42D73DCB25A89B9900E699B2 /* Entities */ = {
