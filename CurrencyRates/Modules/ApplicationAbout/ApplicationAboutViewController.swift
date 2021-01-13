@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ApplicationAboutViewController: UIViewController, ApplicationAboutViewControllerProtocol {
     
@@ -17,7 +18,6 @@ class ApplicationAboutViewController: UIViewController, ApplicationAboutViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(viewController: self)
-        
     }
     
     @IBAction func closeButtonClicked(_ sender: UIBarButtonItem) {
@@ -31,5 +31,5 @@ class ApplicationAboutViewController: UIViewController, ApplicationAboutViewCont
     func setUrlButtonTitle(title: String) {
         urlButton.setTitle(title, for: .normal)
     }
-    
+
 }
