@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainViewController: UIViewController {
     private var didSetupConstraints = false
@@ -21,6 +22,8 @@ class MainViewController: UIViewController {
         view.backgroundColor = .blue
         return view
     }()
+    
+    
     
     let inputTextField: UITextField = {
         let inputTextField = UITextField()
