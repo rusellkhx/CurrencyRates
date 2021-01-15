@@ -13,27 +13,27 @@ class MainViewController: UIViewController {
     
     let intoView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.appColor(.mainSubViewInputBackgroundColor)
         return view
     }()
     
     let outoView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = UIColor.appColor(.mainSubViewOutputBackgroundColor)
         return view
     }()
     
-    
-    
     let inputTextField: UITextField = {
         let inputTextField = UITextField()
-        inputTextField.textColor = .blue
+        inputTextField.textColor = UIColor.appColor(.inputTextColor)
+        inputTextField.font = UIFont.appFont(.bold)
         return inputTextField
     }()
     
     let outputTextField: UITextField = {
         let outputTextField = UITextField()
-        outputTextField.textColor = .white
+        outputTextField.textColor = UIColor.appColor(.outputTextColor)
+        outputTextField.font = UIFont.appFont(.bold)
         return outputTextField
     }()
     
