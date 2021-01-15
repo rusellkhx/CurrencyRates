@@ -26,6 +26,9 @@
 		42D73DD625A8A26B00E699B2 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D73DD525A8A26B00E699B2 /* Descriptions.swift */; };
 		42F11A7E25B1B9D300BD0F26 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A7D25B1B9D300BD0F26 /* Color.swift */; };
 		42F11A8825B1C68000BD0F26 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A8725B1C68000BD0F26 /* Font.swift */; };
+		42F11A8B25B1CFAC00BD0F26 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A8A25B1CFAC00BD0F26 /* Button.swift */; };
+		42F11A8E25B1E09500BD0F26 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A8D25B1E09500BD0F26 /* TextField.swift */; };
+		42F11A9125B1E30900BD0F26 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A9025B1E30900BD0F26 /* Label.swift */; };
 		E8B73EF8D4D0D9DDCE8264F2 /* Pods_CurrencyRates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6083EF7E20DEEBF65D98701A /* Pods_CurrencyRates.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		42D73DD525A8A26B00E699B2 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		42F11A7D25B1B9D300BD0F26 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		42F11A8725B1C68000BD0F26 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		42F11A8A25B1CFAC00BD0F26 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		42F11A8D25B1E09500BD0F26 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		42F11A9025B1E30900BD0F26 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		6083EF7E20DEEBF65D98701A /* Pods_CurrencyRates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyRates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B4242EB1A55F8604E28CEA /* Pods-CurrencyRates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +195,9 @@
 			children = (
 				42F11A7D25B1B9D300BD0F26 /* Color.swift */,
 				42F11A8725B1C68000BD0F26 /* Font.swift */,
+				42F11A8A25B1CFAC00BD0F26 /* Button.swift */,
+				42F11A8D25B1E09500BD0F26 /* TextField.swift */,
+				42F11A9025B1E30900BD0F26 /* Label.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,8 +337,10 @@
 				4252EEAC25A1D88C001F1227 /* NetworkService.swift in Sources */,
 				42F11A7E25B1B9D300BD0F26 /* Color.swift in Sources */,
 				42F11A8825B1C68000BD0F26 /* Font.swift in Sources */,
+				42F11A8B25B1CFAC00BD0F26 /* Button.swift in Sources */,
 				4252EE9425A1BBFB001F1227 /* ApplicationAboutConfigurator.swift in Sources */,
 				4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */,
+				42F11A8E25B1E09500BD0F26 /* TextField.swift in Sources */,
 				4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */,
 				4252EE9B25A1BFE8001F1227 /* ApplicationAboutViewController.swift in Sources */,
 				4252EEA725A1C2F3001F1227 /* ApplicationAboutInteractor.swift in Sources */,
@@ -337,6 +348,7 @@
 				4252EEA125A1C129001F1227 /* ApplicationAboutPresenter.swift in Sources */,
 				4252EE7925A1B59D001F1227 /* SceneDelegate.swift in Sources */,
 				4252EE9825A1BF5C001F1227 /* ApplicationAboutProtocols.swift in Sources */,
+				42F11A9125B1E30900BD0F26 /* Label.swift in Sources */,
 				4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */,
 				4252EEA425A1C13B001F1227 /* ApplicationAboutRouter.swift in Sources */,
 				42D73DD625A8A26B00E699B2 /* Descriptions.swift in Sources */,

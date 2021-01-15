@@ -26,25 +26,30 @@ class MainViewController: UIViewController {
     let inputTextField: UITextField = {
         let inputTextField = UITextField()
         inputTextField.textColor = UIColor.appColor(.inputTextColor)
-        inputTextField.font = UIFont.appFont(.bold)
+        inputTextField.font = UIFont.appFont(.bold, size: 60)
         return inputTextField
     }()
     
-    let outputTextField: UITextField = {
-        let outputTextField = UITextField()
-        outputTextField.textColor = UIColor.appColor(.outputTextColor)
-        outputTextField.font = UIFont.appFont(.bold)
-        return outputTextField
-    }()
+    let outputTextLabel = UILabel(text: DescriptionOfCurrencies.ShortName.USD,
+                                  textColor: UIColor.appColor(.outputTextColor),
+                                  font: UIFont.appFont(.bold, size: 60))
+    
+    let inputCurrencyButton = UIButton(title: DescriptionOfCurrencies.ShortName.USD,
+                                       titleColor: UIColor.appColor(.inputTextColor),
+                                       backgroundColor: UIColor.appColor(.mainSubViewOutputBackgroundColor),
+                                       font: .none,
+                                       isShadow: true,
+                                       cornerRadius: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.systemBlue
+        view.backgroundColor = UIColor.appColor(.mainViewBackgroundColor)
         view.addSubview(intoView)
         view.addSubview(outoView)
         intoView.addSubview(inputTextField)
-        outoView.addSubview(outputTextField)
+        intoView.addSubview(inputCurrencyButton)
+        outoView.addSubview(outputTextLabel)
         view.setNeedsUpdateConstraints()
         updateViewConstraints()
     }
@@ -65,10 +70,16 @@ class MainViewController: UIViewController {
             }
             
             inputTextField.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
+                make.leading.top.bottom.equalToSuperview().offset(5)
             }
             
-            outputTextField.snp.makeConstraints { make in
+            inputCurrencyButton.snp.makeConstraints { make in
+                make.trailing.top.bottom.equalToSuperview()
+                //make.top.equalTo(inputTextField.snp.bottom).offset(10)
+                make.leading.equalTo(inputTextField.snp.trailing)
+            }
+            
+            outputTextLabel.snp.makeConstraints { make in
                 make.edges.equalToSuperview()
             }
             

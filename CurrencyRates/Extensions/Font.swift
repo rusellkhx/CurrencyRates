@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 extension UIFont {
     
     static private let familyFont = "OpenSans-"
@@ -24,7 +25,7 @@ extension UIFont {
         case boldItalic = "BoldItalic"
     }
     
-    static func appFont(_ name: AssetsFont, size: CGFloat = 30) -> UIFont {
+    static func appFont(_ name: AssetsFont, size: CGFloat = 14) -> UIFont {
         
         guard let font = UIFont(name: familyFont + name.rawValue, size: size) else {
             print("Error: font \(familyFont + name.rawValue) not found")
