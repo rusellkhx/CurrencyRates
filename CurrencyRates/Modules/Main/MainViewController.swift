@@ -27,6 +27,10 @@ class MainViewController: UIViewController {
         let inputTextField = UITextField()
         inputTextField.textColor = UIColor.appColor(.inputTextColor)
         inputTextField.font = UIFont.appFont(.bold, size: 60)
+        inputTextField.minimumFontSize = 20
+        inputTextField.adjustsFontSizeToFitWidth = true
+        inputTextField.clearButtonMode = .whileEditing
+        inputTextField.keyboardType = .decimalPad
         return inputTextField
     }()
     
@@ -35,10 +39,10 @@ class MainViewController: UIViewController {
                                   font: UIFont.appFont(.bold, size: 60))
     
     let inputCurrencyButton = UIButton(title: DescriptionOfCurrencies.ShortName.USD,
-                                       titleColor: UIColor.appColor(.inputTextColor),
+                                       titleColor: UIColor.appColor(.outputTextColor),
                                        backgroundColor: UIColor.appColor(.mainSubViewOutputBackgroundColor),
-                                       font: .none,
-                                       isShadow: true,
+                                       font: UIFont.appFont(.bold, size: 30),
+                                       isShadow: false,
                                        cornerRadius: 0)
     
     override func viewDidLoad() {
@@ -59,24 +63,31 @@ class MainViewController: UIViewController {
         if (!didSetupConstraints) {
             
             intoView.snp.makeConstraints { make in
-                make.leading.top.trailing.equalTo(view).inset(20)
+                make.top.equalTo(view).inset(20)
+                make.left.top.right.equalTo(view).inset(20)
                 make.height.equalTo(70)
             }
             
             outoView.snp.makeConstraints { make in
-                make.leading.trailing.equalTo(view).inset(20)
+                make.left.right.equalTo(view).inset(20)
                 make.top.equalTo(intoView.snp.bottom).offset(20)
                 make.height.equalTo(70)
             }
             
             inputTextField.snp.makeConstraints { make in
-                make.leading.top.bottom.equalToSuperview().offset(5)
+                make.left.equalTo(intoView).inset(5)
+                make.top.bottom.equalTo(intoView)
+                //make.right.equalTo(inputCurrencyButton.snp.left)
+                make.right.equalTo(inputCurrencyButton.snp.left)
+                make.width.equalTo(200)
+                make.height.equalTo(70)
+                
             }
             
             inputCurrencyButton.snp.makeConstraints { make in
-                make.trailing.top.bottom.equalToSuperview()
-                //make.top.equalTo(inputTextField.snp.bottom).offset(10)
-                make.leading.equalTo(inputTextField.snp.trailing)
+                make.right.top.bottom.equalTo(intoView)
+                make.left.equalTo(inputTextField.snp.right)
+                make.width.height.equalTo(70)
             }
             
             outputTextLabel.snp.makeConstraints { make in
