@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
+    
     private var didSetupConstraints = false
     
     let intoView: UIView = {
@@ -23,10 +24,17 @@ class MainViewController: UIViewController {
         return view
     }()
     
+    let currencyRatesView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.appColor(.mainSuvViewCurrencyRates)
+        return view
+    }()
+    
+    // MARK: intoView
     let inputTextField: UITextField = {
         let inputTextField = UITextField()
         inputTextField.textColor = UIColor.appColor(.inputTextColor)
-        inputTextField.font = UIFont.appFont(.bold, size: 60)
+        inputTextField.font = UIFont.appFont(.regular, size: 60)
         inputTextField.minimumFontSize = 20
         inputTextField.adjustsFontSizeToFitWidth = true
         inputTextField.clearButtonMode = .whileEditing
@@ -34,28 +42,55 @@ class MainViewController: UIViewController {
         return inputTextField
     }()
     
+    let inputCurrencyButton = UIButton(title: DescriptionOfCurrencies.ShortName.USD,
+                                       titleColor: UIColor.appColor(.inputTextColor),
+                                       backgroundColor: UIColor.appColor(.mainSubViewInputBackgroundColor),
+                                       font: UIFont.appFont(.regular, size: 30),
+                                       isShadow: false)
+    
+    // MARK: outoView
     let outputTextLabel = UILabel(text: DescriptionOfCurrencies.ShortName.USD,
                                   textColor: UIColor.appColor(.outputTextColor),
-                                  font: UIFont.appFont(.bold, size: 60))
+                                  font: UIFont.appFont(.regular, size: 60))
     
-    let inputCurrencyButton = UIButton(title: DescriptionOfCurrencies.ShortName.USD,
-                                       titleColor: UIColor.appColor(.outputTextColor),
-                                       backgroundColor: UIColor.appColor(.mainSubViewOutputBackgroundColor),
-                                       font: UIFont.appFont(.bold, size: 30),
-                                       isShadow: false,
-                                       cornerRadius: 0)
+    let outputCurrencyButton = UIButton(title: DescriptionOfCurrencies.ShortName.EUR,
+                                        titleColor: UIColor.appColor(.outputTextColor),
+                                        backgroundColor: UIColor.appColor(.mainSubViewOutputBackgroundColor),
+                                        font: UIFont.appFont(.regular, size: 30),
+                                        isShadow: false)
     
+    // MARK: currencyRatesView
+    let currencyRatesTextLabel = UILabel(text: DescriptionOfCurrencies.defaultName.defaultCurrencyRates,
+                                         textColor: UIColor.appColor(.defaultText),
+                                         font: UIFont.appFont(.bold, size: 14))
+    
+    let infoButton: UIButton = {
+        let infoButton = UIButton()
+        infoButton.setImage(UIImage(systemName: DescriptionOfCurrencies.systemImageName.info),
+                                    for: .normal)
+        infoButton.tintColor = UIColor.appColor(.defaultText)
+        return infoButton
+    }()
+                           
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateView()
+        view.setNeedsUpdateConstraints()
+        updateViewConstraints()
+    }
+    
+    private func updateView() {
         view.backgroundColor = UIColor.appColor(.mainViewBackgroundColor)
         view.addSubview(intoView)
         view.addSubview(outoView)
+        view.addSubview(currencyRatesView)
         intoView.addSubview(inputTextField)
         intoView.addSubview(inputCurrencyButton)
         outoView.addSubview(outputTextLabel)
-        view.setNeedsUpdateConstraints()
-        updateViewConstraints()
+        outoView.addSubview(outputCurrencyButton)
+        currencyRatesView.addSubview(currencyRatesTextLabel)
+        currencyRatesView.addSubview(infoButton)
     }
     
     override func updateViewConstraints() {
@@ -63,25 +98,30 @@ class MainViewController: UIViewController {
         if (!didSetupConstraints) {
             
             intoView.snp.makeConstraints { make in
-                make.top.equalTo(view).inset(20)
-                make.left.top.right.equalTo(view).inset(20)
+                make.top.equalToSuperview().offset(25)
+                make.left.right.equalToSuperview().inset(20)
                 make.height.equalTo(70)
+                make.centerX.equalTo(view)
             }
             
             outoView.snp.makeConstraints { make in
-                make.left.right.equalTo(view).inset(20)
-                make.top.equalTo(intoView.snp.bottom).offset(20)
+                make.left.right.equalToSuperview().inset(20)
+                make.top.equalTo(intoView.snp.bottom).offset(5)
                 make.height.equalTo(70)
+            }
+            
+            currencyRatesView.snp.makeConstraints { make in
+                make.left.right.equalToSuperview()
+                make.top.equalTo(outoView.snp.bottom).offset(20)
+                make.height.equalTo(28)
             }
             
             inputTextField.snp.makeConstraints { make in
                 make.left.equalTo(intoView).inset(5)
                 make.top.bottom.equalTo(intoView)
-                //make.right.equalTo(inputCurrencyButton.snp.left)
                 make.right.equalTo(inputCurrencyButton.snp.left)
                 make.width.equalTo(200)
                 make.height.equalTo(70)
-                
             }
             
             inputCurrencyButton.snp.makeConstraints { make in
@@ -91,7 +131,27 @@ class MainViewController: UIViewController {
             }
             
             outputTextLabel.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
+                make.left.equalTo(outoView).inset(5)
+                make.top.bottom.equalTo(outoView)
+                make.right.equalTo(outputCurrencyButton.snp.left)
+                make.width.equalTo(200)
+                make.height.equalTo(70)
+            }
+            
+            outputCurrencyButton.snp.makeConstraints { make in
+                make.right.top.bottom.equalTo(outoView)
+                make.left.equalTo(outputTextLabel.snp.right)
+                make.width.height.equalTo(70)
+            }
+            
+            currencyRatesTextLabel.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+            
+            infoButton.snp.makeConstraints { make in
+                make.right.top.bottom.equalTo(currencyRatesView)
+                make.width.equalTo(currencyRatesView.snp.height)
+                //make.width.height.equalTo(20)
             }
             
             didSetupConstraints = true

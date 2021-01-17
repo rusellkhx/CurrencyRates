@@ -17,6 +17,14 @@ struct DescriptionOfCurrencies {
         static let USD = "USD"
         static let EUR = "EUR"
     }
+    
+    enum defaultName {
+        static let defaultCurrencyRates = "1 USD = 0.83568 EUR"
+    }
+    
+    enum systemImageName {
+        static let info = "info.circle"
+    }
 }
 
 struct DescriptionOfView {

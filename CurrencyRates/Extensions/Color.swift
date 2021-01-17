@@ -15,7 +15,8 @@ extension UIColor {
         case mainViewBackgroundColor
         case mainSubViewInputBackgroundColor
         case mainSubViewOutputBackgroundColor
-        case shadowColor
+        case mainSuvViewCurrencyRates
+        case defaultText
     }
     
     static func appColor(_ name: AssetsColor) -> UIColor {
