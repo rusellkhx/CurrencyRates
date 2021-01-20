@@ -30,4 +30,7 @@ struct DescriptionOfCurrencies {
 struct DescriptionOfView {
     static let inputCurrencyPickerViewTitle = "Choose input currency"
     static let outputCurrencyPickerViewTitle = "Choose output currency"
+    static let mainViewNameTitle = "Currency converter"
+    static let aboutViewNameTitle = "About App"
+    static let detailViewNameTitle = "Exchange rates"
 }

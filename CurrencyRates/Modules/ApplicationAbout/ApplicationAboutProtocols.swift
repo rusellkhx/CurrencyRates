@@ -18,7 +18,7 @@ protocol ApplicationAboutPresenterProtocol: class {
     func urlButtonPush(urlString: String?)
 }
 
-protocol ApplicationAboutRouterProtocol {
+protocol ApplicationAboutRouterProtocol: class {
     func closeCurrentViewController()
 }
 
