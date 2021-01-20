@@ -151,7 +151,6 @@ class MainViewController: UIViewController {
             infoButton.snp.makeConstraints { make in
                 make.right.top.bottom.equalTo(currencyRatesView)
                 make.width.equalTo(currencyRatesView.snp.height)
-                //make.width.height.equalTo(20)
             }
             
             didSetupConstraints = true

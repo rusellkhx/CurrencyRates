@@ -23,7 +23,5 @@ class NetworkService: NetworkServiceProtocol {
             }
         }
     }
-    
-    
 }
         

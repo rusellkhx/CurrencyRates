@@ -8,6 +8,7 @@
 import UIKit
 
 class ApplicationAboutInteractor: ApplicationAboutInteractorProtocol {
+    
     var urlRatesSource = ""
     
     func openUrl(urlString: String) {
