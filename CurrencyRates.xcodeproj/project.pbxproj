@@ -27,8 +27,10 @@
 		426F06D625B8996200C434E6 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06D525B8996200C434E6 /* Builder.swift */; };
 		426F06DA25B8A10600C434E6 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06D925B8A10600C434E6 /* MainProtocols.swift */; };
 		426F06DD25B8A27B00C434E6 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */; };
+		4290D00625BB33120033386C /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290D00525BB33120033386C /* MainRouter.swift */; };
 		42D73DCD25A89BB700E699B2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D73DCC25A89BB700E699B2 /* Currency.swift */; };
 		42D73DD625A8A26B00E699B2 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D73DD525A8A26B00E699B2 /* Descriptions.swift */; };
+		42DC3FF425BC7423008D38F0 /* CurrencyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC3FF325BC7423008D38F0 /* CurrencyPickerView.swift */; };
 		42F11A7E25B1B9D300BD0F26 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A7D25B1B9D300BD0F26 /* Color.swift */; };
 		42F11A8825B1C68000BD0F26 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A8725B1C68000BD0F26 /* Font.swift */; };
 		42F11A8B25B1CFAC00BD0F26 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A8A25B1CFAC00BD0F26 /* Button.swift */; };
@@ -61,8 +63,10 @@
 		426F06D525B8996200C434E6 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		426F06D925B8A10600C434E6 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		4290D00525BB33120033386C /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		42D73DCC25A89BB700E699B2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		42D73DD525A8A26B00E699B2 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
+		42DC3FF325BC7423008D38F0 /* CurrencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerView.swift; sourceTree = "<group>"; };
 		42F11A7D25B1B9D300BD0F26 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		42F11A8725B1C68000BD0F26 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		42F11A8A25B1CFAC00BD0F26 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 		4252EE7525A1B59D001F1227 /* CurrencyRates */ = {
 			isa = PBXGroup;
 			children = (
+				42DC3FF125BC73FC008D38F0 /* Views */,
 				42F11A7C25B1B9B800BD0F26 /* Extensions */,
 				42D73DD425A8A23F00E699B2 /* Utilities */,
 				42D73DCB25A89B9900E699B2 /* Entities */,
@@ -137,6 +142,7 @@
 				4252EEB825A1E70C001F1227 /* MainViewController.swift */,
 				426F06D925B8A10600C434E6 /* MainProtocols.swift */,
 				426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */,
+				4290D00525BB33120033386C /* MainRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -209,6 +215,22 @@
 				42D73DD525A8A26B00E699B2 /* Descriptions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		42DC3FF125BC73FC008D38F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42DC3FF225BC7405008D38F0 /* PickerView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		42DC3FF225BC7405008D38F0 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				42DC3FF325BC7423008D38F0 /* CurrencyPickerView.swift */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 		42F11A7C25B1B9B800BD0F26 /* Extensions */ = {
@@ -365,12 +387,14 @@
 				42F11A8E25B1E09500BD0F26 /* TextField.swift in Sources */,
 				4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */,
 				420156F725B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift in Sources */,
+				42DC3FF425BC7423008D38F0 /* CurrencyPickerView.swift in Sources */,
 				426F06D125B88B2500C434E6 /* DetailExhangesRatesViewController.swift in Sources */,
 				426F06CD25B8877200C434E6 /* Image.swift in Sources */,
 				4252EE9B25A1BFE8001F1227 /* ApplicationAboutViewController.swift in Sources */,
 				4252EEA725A1C2F3001F1227 /* ApplicationAboutInteractor.swift in Sources */,
 				42D73DCD25A89BB700E699B2 /* Currency.swift in Sources */,
 				4252EEA125A1C129001F1227 /* ApplicationAboutPresenter.swift in Sources */,
+				4290D00625BB33120033386C /* MainRouter.swift in Sources */,
 				4252EE7925A1B59D001F1227 /* SceneDelegate.swift in Sources */,
 				4252EE9825A1BF5C001F1227 /* ApplicationAboutProtocols.swift in Sources */,
 				426F06DD25B8A27B00C434E6 /* MainConfigurator.swift in Sources */,

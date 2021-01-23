@@ -34,3 +34,8 @@ struct DescriptionOfView {
     static let aboutViewNameTitle = "About App"
     static let detailViewNameTitle = "Exchange rates"
 }
+
+struct DescriptionOfButton {
+    static let cancel = "Cancel"
+    static let aply = "Aply"
+}

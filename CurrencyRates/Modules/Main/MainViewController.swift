@@ -11,6 +11,11 @@ import SnapKit
 class MainViewController: UIViewController {
     
     private var didSetupConstraints = false
+
+    let currencyPickerView: CurrencyPickerView = {
+        let view = CurrencyPickerView()
+        return view
+    }()
     
     let intoView: UIView = {
         let view = UIView()
@@ -74,10 +79,19 @@ class MainViewController: UIViewController {
                            
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        infoButton.addTarget(self, action: #selector(open), for: .touchUpInside)
         updateView()
         view.setNeedsUpdateConstraints()
         updateViewConstraints()
+    }
+    
+    @objc func open() {
+        let detailViewController = DetailExhangesRatesViewController()
+        //let aObjNavi = UINavigationController(rootViewController: detailViewController)
+        //self.navigationController?.pushViewController(aObjNavi, animated: true)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+        //present(aObjNavi, animated: true, completion: nil)
+       
     }
     
     private func updateView() {
@@ -85,12 +99,16 @@ class MainViewController: UIViewController {
         view.addSubview(intoView)
         view.addSubview(outoView)
         view.addSubview(currencyRatesView)
+        
+        view.addSubview(currencyPickerView)
+        
         intoView.addSubview(inputTextField)
         intoView.addSubview(inputCurrencyButton)
         outoView.addSubview(outputTextLabel)
         outoView.addSubview(outputCurrencyButton)
         currencyRatesView.addSubview(currencyRatesTextLabel)
         currencyRatesView.addSubview(infoButton)
+        
     }
     
     override func updateViewConstraints() {
@@ -151,6 +169,12 @@ class MainViewController: UIViewController {
             infoButton.snp.makeConstraints { make in
                 make.right.top.bottom.equalTo(currencyRatesView)
                 make.width.equalTo(currencyRatesView.snp.height)
+            }
+            
+            currencyPickerView.snp.makeConstraints { make in
+                make.left.right.equalToSuperview()
+                make.top.equalTo(currencyRatesView.snp.bottom).offset(20)
+                make.width.height.equalTo(50)
             }
             
             didSetupConstraints = true

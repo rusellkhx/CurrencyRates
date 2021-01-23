@@ -10,23 +10,24 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    var firstController : UIViewController!
-    var secondTabNavigationControoller : UINavigationController!
+    var firstController: UIViewController!
+    var secondTabNavigationControoller: UIViewController!
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+       
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
         let tabBarController = UITabBarController()
-        let mainVC = ModuleBuilder.createMainModule() //MainViewController()
-        let aboutVC = ApplicationAboutViewController()
+        let mainVC =  MainViewController()//ModuleBuilder.createMainModule()
+        
+        let detail = DetailExhangesRatesViewController()
         
         
         firstController = mainVC
-        secondTabNavigationControoller = UINavigationController.init(rootViewController: aboutVC)
+        secondTabNavigationControoller = detail
         
         tabBarController.viewControllers = [firstController,
                                             secondTabNavigationControoller]

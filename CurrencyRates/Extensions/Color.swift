@@ -17,6 +17,8 @@ extension UIColor {
         case mainSubViewOutputBackgroundColor
         case mainSuvViewCurrencyRates
         case defaultText
+        case pickerTitleTextColor
+        case pickerViewColor
     }
     
     static func appColor(_ name: AssetsColor) -> UIColor {

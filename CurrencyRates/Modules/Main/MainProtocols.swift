@@ -14,9 +14,9 @@ protocol MainViewControllerProtocol: class {
     func setInputCurrencyShortName(with shortName: String)
     func setOutputCurrencyShortName(with shortName: String)
     func addDoneOnInputCurrencyKeyboard()
-    func showHUD()
+    //func showHUD()
     func showLoadCurrenciesButton()
-    func hideHUD()
+    //func hideHUD()
     func showAlertView(with text: String)
     func showPickerView()
     func hidePickerView()
@@ -61,9 +61,9 @@ protocol MainInteractorProtocol: class {
 }
 
 protocol MainRouterProtocol: class {
-    func showAboutScene()
+    //func showAboutScene()
     //func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    func open(for viewController: UIViewController)
+    func open(for viewController: UIViewController, to: UIViewController)
 }
 
 protocol MainConfiguratorProtocol: class {
