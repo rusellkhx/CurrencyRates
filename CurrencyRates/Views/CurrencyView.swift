@@ -1,21 +1,21 @@
 //
-//  MainViewController.swift
+//  CurrencyView.swift
 //  CurrencyRates
 //
-//  Created by Rusell on 03.01.2021.
+//  Created by Rusell on 25.01.2021.
 //
 
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController {
+class CurrencyView: UIView {
     
-    private var didSetupConstraints = false
-  
-    let currencyPickerView: CurrencyPickerView = {
+    
+    
+    /*let currencyPickerView: CurrencyPickerView = {
         let view = CurrencyPickerView()
         return view
-    }()
+    }()*/
     
     let intoView: UIView = {
         let view = UIView()
@@ -77,30 +77,12 @@ class MainViewController: UIViewController {
         return infoButton
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        infoButton.addTarget(self, action: #selector(open), for: .touchUpInside)
-        updateView()
-        updateViewConstraints()
-        
-        setupConstraints()
-    }
-    
-    @objc func open() {
-        let detailViewController = DetailExhangesRatesViewController()
-        present(detailViewController, animated: true, completion: nil)
-       
-    }
-}
-
-extension MainViewController {
-    
-    private func updateView() {
-        view.backgroundColor = UIColor.appColor(.mainViewBackgroundColor)
-        view.addSubview(intoView)
-        view.addSubview(outoView)
-        view.addSubview(currencyRatesView)
-        //view.addSubview(currencyPickerView)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //addSubview(view)
+        addSubview(intoView)
+        addSubview(outoView)
+        addSubview(currencyRatesView)
         
         intoView.addSubview(inputTextField)
         intoView.addSubview(inputCurrencyButton)
@@ -108,26 +90,28 @@ extension MainViewController {
         outoView.addSubview(outputCurrencyButton)
         currencyRatesView.addSubview(currencyRatesTextLabel)
         currencyRatesView.addSubview(infoButton)
-        
         setupConstraints()
     }
-
+    
     private func setupConstraints() {
+        
+        
+        
         intoView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(25)
-            make.left.right.equalToSuperview().inset(20)
+            make.top.equalTo(self).offset(25)
+            make.left.right.equalTo(self).inset(20)
             make.height.equalTo(70)
-            make.centerX.equalTo(view)
+            make.centerX.equalTo(self)
         }
         
         outoView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalTo(self).inset(20)
             make.top.equalTo(intoView.snp.bottom).offset(5)
             make.height.equalTo(70)
         }
         
         currencyRatesView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.right.equalTo(self)
             make.top.equalTo(outoView.snp.bottom).offset(20)
             make.height.equalTo(28)
         }
@@ -161,7 +145,7 @@ extension MainViewController {
         }
         
         currencyRatesTextLabel.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
+            make.centerX.centerY.equalTo(self)
         }
         
         infoButton.snp.makeConstraints { make in
@@ -170,11 +154,15 @@ extension MainViewController {
         }
         
         /*currencyPickerView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.right.equalTo(view)
             make.top.equalTo(currencyRatesView.snp.bottom).offset(20)
             make.width.height.equalTo(50)
         }*/
         
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
-

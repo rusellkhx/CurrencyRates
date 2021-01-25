@@ -22,6 +22,7 @@
 		4252EEAC25A1D88C001F1227 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEAB25A1D88C001F1227 /* NetworkService.swift */; };
 		4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */; };
 		4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEB825A1E70C001F1227 /* MainViewController.swift */; };
+		42558D3A25BF1B70004AD451 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42558D3925BF1B70004AD451 /* CurrencyView.swift */; };
 		426F06CD25B8877200C434E6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06CC25B8877200C434E6 /* Image.swift */; };
 		426F06D125B88B2500C434E6 /* DetailExhangesRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06D025B88B2500C434E6 /* DetailExhangesRatesViewController.swift */; };
 		426F06D625B8996200C434E6 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06D525B8996200C434E6 /* Builder.swift */; };
@@ -58,6 +59,7 @@
 		4252EEAB25A1D88C001F1227 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		4252EEB825A1E70C001F1227 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		42558D3925BF1B70004AD451 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		426F06CC25B8877200C434E6 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		426F06D025B88B2500C434E6 /* DetailExhangesRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExhangesRatesViewController.swift; sourceTree = "<group>"; };
 		426F06D525B8996200C434E6 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				42DC3FF225BC7405008D38F0 /* PickerView */,
+				42558D3925BF1B70004AD451 /* CurrencyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				4252EE9425A1BBFB001F1227 /* ApplicationAboutConfigurator.swift in Sources */,
 				4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */,
 				42F11A8E25B1E09500BD0F26 /* TextField.swift in Sources */,
+				42558D3A25BF1B70004AD451 /* CurrencyView.swift in Sources */,
 				4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */,
 				420156F725B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift in Sources */,
 				42DC3FF425BC7423008D38F0 /* CurrencyPickerView.swift in Sources */,

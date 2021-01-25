@@ -15,7 +15,7 @@ class MainRouter: MainRouterProtocol {
         self.viewController = viewController
     }
     
-    func open(for firstViewController: UIViewController, to secondViewController: UIViewController) {
-        firstViewController.navigationController?.pushViewController(secondViewController, animated: true)
+    func open(to secondViewController: UIViewController) {
+        self.viewController.present(secondViewController, animated: true)
     }
 }
