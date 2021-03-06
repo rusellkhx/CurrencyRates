@@ -19,6 +19,8 @@ extension UIColor {
         case defaultText
         case pickerTitleTextColor
         case pickerViewColor
+        case navBarColor
+        case white
     }
     
     static func appColor(_ name: AssetsColor) -> UIColor {

@@ -9,16 +9,20 @@ import UIKit
 
 class ApplicationAboutPresenter: ApplicationAboutPresenterProtocol {
     
-    var router: ApplicationAboutRouterProtocol!
-    var interactor: ApplicationAboutInteractorProtocol!
-    weak var view: ApplicationAboutViewControllerProtocol!
+    private let router: ApplicationAboutRouterProtocol
+    private let interactor: ApplicationAboutInteractorProtocol
+    private weak var view: ApplicationAboutViewControllerProtocol?
     
-    required init(view: ApplicationAboutViewControllerProtocol) {
-        self.view = view
+    init(view: ApplicationAboutViewControllerProtocol,
+         interactor: ApplicationAboutInteractorProtocol,
+         router: ApplicationAboutRouterProtocol) {
+         self.view = view
+         self.interactor = interactor
+         self.router = router
     }
     
     func configureView() {
-        view.setUrlButtonTitle(title: interactor.urlRatesSource)
+        view?.setUrlButtonTitle(title: interactor.urlRatesSource)
     }
     
     func closeButtonPush() {

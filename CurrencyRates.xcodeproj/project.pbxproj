@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		420156F725B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420156F625B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift */; };
+		420A365225F3B321007E8363 /* ApplicationAboutViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A365125F3B321007E8363 /* ApplicationAboutViewControllerEx.swift */; };
 		4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EE7625A1B59D001F1227 /* AppDelegate.swift */; };
 		4252EE7925A1B59D001F1227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EE7825A1B59D001F1227 /* SceneDelegate.swift */; };
 		4252EE8025A1B59E001F1227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4252EE7F25A1B59E001F1227 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		42D73DCD25A89BB700E699B2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D73DCC25A89BB700E699B2 /* Currency.swift */; };
 		42D73DD625A8A26B00E699B2 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D73DD525A8A26B00E699B2 /* Descriptions.swift */; };
 		42DC3FF425BC7423008D38F0 /* CurrencyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC3FF325BC7423008D38F0 /* CurrencyPickerView.swift */; };
+		42E8423F25F3659900E127D2 /* MainViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8423E25F3659900E127D2 /* MainViewControllerEx.swift */; };
 		42F11A7E25B1B9D300BD0F26 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A7D25B1B9D300BD0F26 /* Color.swift */; };
 		42F11A8825B1C68000BD0F26 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A8725B1C68000BD0F26 /* Font.swift */; };
 		42F11A8B25B1CFAC00BD0F26 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F11A8A25B1CFAC00BD0F26 /* Button.swift */; };
@@ -43,6 +45,7 @@
 /* Begin PBXFileReference section */
 		00AD6DB0C3CB4E7CDB60B750 /* Pods-CurrencyRates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates.release.xcconfig"; path = "Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates.release.xcconfig"; sourceTree = "<group>"; };
 		420156F625B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UITableView+UICollectionView.+UIView.swift"; sourceTree = "<group>"; };
+		420A365125F3B321007E8363 /* ApplicationAboutViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAboutViewControllerEx.swift; sourceTree = "<group>"; };
 		4252EE7325A1B59D001F1227 /* CurrencyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4252EE7625A1B59D001F1227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4252EE7825A1B59D001F1227 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		42D73DCC25A89BB700E699B2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		42D73DD525A8A26B00E699B2 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		42DC3FF325BC7423008D38F0 /* CurrencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerView.swift; sourceTree = "<group>"; };
+		42E8423E25F3659900E127D2 /* MainViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerEx.swift; sourceTree = "<group>"; };
 		42F11A7D25B1B9D300BD0F26 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		42F11A8725B1C68000BD0F26 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		42F11A8A25B1CFAC00BD0F26 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -90,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420A365025F3B306007E8363 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				420A365125F3B321007E8363 /* ApplicationAboutViewControllerEx.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4252EE6A25A1B59D001F1227 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				4252EEB825A1E70C001F1227 /* MainViewController.swift */,
+				42E8423D25F3656D00E127D2 /* Extensions */,
 				426F06D925B8A10600C434E6 /* MainProtocols.swift */,
 				426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */,
 				4290D00525BB33120033386C /* MainRouter.swift */,
@@ -153,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				4252EE9A25A1BFE8001F1227 /* ApplicationAboutViewController.swift */,
+				420A365025F3B306007E8363 /* Extensions */,
 				4252EEA025A1C129001F1227 /* ApplicationAboutPresenter.swift */,
 				4252EEA625A1C2F3001F1227 /* ApplicationAboutInteractor.swift */,
 				4252EE9325A1BBFB001F1227 /* ApplicationAboutConfigurator.swift */,
@@ -234,6 +248,14 @@
 				42DC3FF325BC7423008D38F0 /* CurrencyPickerView.swift */,
 			);
 			path = PickerView;
+			sourceTree = "<group>";
+		};
+		42E8423D25F3656D00E127D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				42E8423E25F3659900E127D2 /* MainViewControllerEx.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		42F11A7C25B1B9B800BD0F26 /* Extensions */ = {
@@ -381,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420A365225F3B321007E8363 /* ApplicationAboutViewControllerEx.swift in Sources */,
 				4252EEAC25A1D88C001F1227 /* NetworkService.swift in Sources */,
 				42F11A7E25B1B9D300BD0F26 /* Color.swift in Sources */,
 				42F11A8825B1C68000BD0F26 /* Font.swift in Sources */,
@@ -404,6 +427,7 @@
 				426F06DD25B8A27B00C434E6 /* MainConfigurator.swift in Sources */,
 				426F06DA25B8A10600C434E6 /* MainProtocols.swift in Sources */,
 				426F06D625B8996200C434E6 /* Builder.swift in Sources */,
+				42E8423F25F3659900E127D2 /* MainViewControllerEx.swift in Sources */,
 				42F11A9125B1E30900BD0F26 /* Label.swift in Sources */,
 				4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */,
 				4252EEA425A1C13B001F1227 /* ApplicationAboutRouter.swift in Sources */,

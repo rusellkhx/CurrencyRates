@@ -7,15 +7,19 @@
 
 import UIKit
 
-class ApplicationAboutConfigurator: ApplicationAboutConfiguratorProtocol {
+final class ApplicationAboutConfigurator: ApplicationAboutConfiguratorProtocol {
     
-    func configure(viewController: ApplicationAboutViewController) {
-        let presenter = ApplicationAboutPresenter(view: viewController)
-        let interactor = ApplicationAboutInteractor(presenter: presenter)
-        let router = ApplicationAboutRouter(viewController: viewController)
+    static func configure() -> UIViewController {
+        let view = ApplicationAboutViewController()
+        let interactor = ApplicationAboutInteractor(networkService: NetworkService())
+        let router = ApplicationAboutRouter()
+        let presenter = ApplicationAboutPresenter(view: view,
+                                                  interactor: interactor,
+                                                  router: router)
         
-        viewController.presenter = presenter
-        presenter.interactor = interactor
-        presenter.router = router
+        view.presenter = presenter
+        router.view = view
+        
+        return view
     }
 }

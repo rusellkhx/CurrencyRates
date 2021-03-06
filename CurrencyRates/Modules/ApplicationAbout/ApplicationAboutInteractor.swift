@@ -9,20 +9,22 @@ import UIKit
 
 class ApplicationAboutInteractor: ApplicationAboutInteractorProtocol {
     
-    var urlRatesSource = ""
+    let networkService: NetworkServiceProtocol
     
-    func openUrl(urlString: String) {
-        print("")
+    var urlRatesSource: String {
+        get {
+            return networkService.urlRatesSource
+        }
     }
     
-    
-    let networkService: NetworkServiceProtocol = NetworkService()
-    weak var presenter: ApplicationAboutPresenterProtocol!
-    
-    required init(presenter: ApplicationAboutPresenterProtocol) {
-        self.presenter = presenter
+    init(networkService: NetworkServiceProtocol) {
+        self.networkService = networkService
     }
-
-
+    
+    func openUrl(urlString: String?) {
+        if let urlString = urlString {
+            networkService.openUrl(urlString: urlString)
+        }
+    }
 }
 

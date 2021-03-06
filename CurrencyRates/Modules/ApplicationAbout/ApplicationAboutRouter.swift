@@ -9,14 +9,10 @@ import UIKit
 
 class ApplicationAboutRouter: ApplicationAboutRouterProtocol {
     
-    weak var viewController: ApplicationAboutViewController!
-    
-    required init(viewController: ApplicationAboutViewController) {
-        self.viewController = viewController
-    }
+    weak var view: ApplicationAboutViewController?
     
     func closeCurrentViewController() {
-        viewController.dismiss(animated: true, completion: nil)
+        view?.dismiss(animated: true, completion: nil)
     }
     
 }

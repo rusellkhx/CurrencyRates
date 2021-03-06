@@ -3,33 +3,41 @@
 //  CurrencyRates
 //
 //  Created by Rusell on 03.01.2021.
-//
 
 import UIKit
 
-
 class ApplicationAboutViewController: UIViewController, ApplicationAboutViewControllerProtocol {
     
-    var presenter: ApplicationAboutPresenterProtocol!
-    let configurator: ApplicationAboutConfiguratorProtocol = ApplicationAboutConfigurator()
+    var presenter: ApplicationAboutPresenterProtocol?
     
-    @IBOutlet weak var urlButton: UIButton!
+    let urlButton = UIButton(title: "https://free.currencyconverterapi.com",
+                             titleColor: .black)
+    
+    
+    
+    let outputTextLabel = UILabel(text: DescriptionOfCurrencies.ShortName.USD,
+                                  textColor: UIColor.appColor(.outputTextColor),
+                                  font: UIFont.appFont(.regular, size: 60))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(viewController: self)
+        updateView()
+        setupConstraints()
+        presenter?.configureView()
     }
     
-    @IBAction func closeButtonClicked(_ sender: UIBarButtonItem) {
-        presenter.closeButtonPush()
+    func closeButtonClicked(_ sender: UIBarButtonItem) {
+        presenter?.closeButtonPush()
     }
     
-    @IBAction func urlButtonClicked(_ sender: UIButton) {
-        presenter.urlButtonPush(urlString: sender.currentTitle)
+    @objc func urlButtonClicked(_ sender: UIButton) {
+        presenter?.urlButtonPush(urlString: sender.currentTitle)
     }
     
-    func setUrlButtonTitle(title: String) {
-        urlButton.setTitle(title, for: .normal)
+    func setUrlButtonTitle(title: String?) {
+        if let title = title {
+            urlButton.setTitle(title, for: .normal)
+        }
     }
-
+    
 }

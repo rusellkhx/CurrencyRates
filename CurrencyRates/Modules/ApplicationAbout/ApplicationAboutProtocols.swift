@@ -5,14 +5,13 @@
 //  Created by Rusell on 03.01.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol ApplicationAboutConfiguratorProtocol: class {
-    func configure(viewController: ApplicationAboutViewController)
+    static func configure() -> UIViewController
 }
 
 protocol ApplicationAboutPresenterProtocol: class {
-    var router: ApplicationAboutRouterProtocol! { set get }
     func configureView()
     func closeButtonPush()
     func urlButtonPush(urlString: String?)
@@ -23,11 +22,11 @@ protocol ApplicationAboutRouterProtocol: class {
 }
 
 protocol ApplicationAboutViewControllerProtocol: class {
-    func setUrlButtonTitle(title: String)
+    func setUrlButtonTitle(title: String?)
 }
 
 protocol ApplicationAboutInteractorProtocol: class {
     var urlRatesSource: String { get }
-    func openUrl(urlString: String)
+    func openUrl(urlString: String?)
 }
 

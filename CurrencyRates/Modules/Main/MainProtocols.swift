@@ -63,7 +63,7 @@ protocol MainInteractorProtocol: class {
 protocol MainRouterProtocol: class {
     //func showAboutScene()
     //func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    func open(to: UIViewController)
+    func open()
 }
 
 protocol MainConfiguratorProtocol: class {
