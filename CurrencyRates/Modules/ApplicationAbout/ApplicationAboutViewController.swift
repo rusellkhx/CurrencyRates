@@ -10,14 +10,16 @@ class ApplicationAboutViewController: UIViewController, ApplicationAboutViewCont
     
     var presenter: ApplicationAboutPresenterProtocol?
     
-    let urlButton = UIButton(title: "https://free.currencyconverterapi.com",
-                             titleColor: .black)
+    let urlButton = UIButton(title: DescriptionOfViewMain.linkURL,
+                             titleColor: UIColor.appColor(.linkURL))
     
+    let infoTextLabel = UILabel(text: DescriptionOfViewMain.labelAppNameTitle,
+                                textColor: UIColor.appColor(.defaultText),
+                                  font: UIFont.appFont(.regular, size: 16))
     
-    
-    let outputTextLabel = UILabel(text: DescriptionOfCurrencies.ShortName.USD,
-                                  textColor: UIColor.appColor(.outputTextColor),
-                                  font: UIFont.appFont(.regular, size: 60))
+    let urlTextLabel = UILabel(text: DescriptionOfViewMain.linkURL,
+                               textColor: UIColor.appColor(.defaultText),
+                                  font: UIFont.appFont(.regular, size: 16))
     
     override func viewDidLoad() {
         super.viewDidLoad()

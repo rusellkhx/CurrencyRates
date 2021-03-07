@@ -8,15 +8,14 @@ import UIKit
 
 class MainRouter: MainRouterProtocol {
 
-    weak var viewController: MainViewController!
-    var navigation: UINavigationController!
+    weak var viewController: MainViewController?
     
     init(viewController: MainViewController) {
         self.viewController = viewController
     }
     
-    func open() {
+    func showAboutScene() {
         let vc = UINavigationController.init(rootViewController: ApplicationAboutConfigurator.configure())
-        viewController.present(vc, animated: true)
+        viewController?.present(vc, animated: true)
     }
 }

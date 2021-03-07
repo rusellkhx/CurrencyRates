@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		420156F725B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420156F625B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift */; };
 		420A365225F3B321007E8363 /* ApplicationAboutViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A365125F3B321007E8363 /* ApplicationAboutViewControllerEx.swift */; };
+		422A829225F4BC97004A6B14 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A829125F4BC97004A6B14 /* MainPresenter.swift */; };
+		422A829725F4C1E0004A6B14 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A829625F4C1E0004A6B14 /* MainInteractor.swift */; };
+		422A829A25F4C238004A6B14 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A829925F4C238004A6B14 /* CurrencyService.swift */; };
+		422A829E25F4C9EE004A6B14 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A829D25F4C9EE004A6B14 /* StorageService.swift */; };
 		4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EE7625A1B59D001F1227 /* AppDelegate.swift */; };
 		4252EE7925A1B59D001F1227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EE7825A1B59D001F1227 /* SceneDelegate.swift */; };
 		4252EE8025A1B59E001F1227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4252EE7F25A1B59E001F1227 /* Assets.xcassets */; };
@@ -46,6 +50,10 @@
 		00AD6DB0C3CB4E7CDB60B750 /* Pods-CurrencyRates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates.release.xcconfig"; path = "Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates.release.xcconfig"; sourceTree = "<group>"; };
 		420156F625B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UITableView+UICollectionView.+UIView.swift"; sourceTree = "<group>"; };
 		420A365125F3B321007E8363 /* ApplicationAboutViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAboutViewControllerEx.swift; sourceTree = "<group>"; };
+		422A829125F4BC97004A6B14 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		422A829625F4C1E0004A6B14 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		422A829925F4C238004A6B14 /* CurrencyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
+		422A829D25F4C9EE004A6B14 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		4252EE7325A1B59D001F1227 /* CurrencyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4252EE7625A1B59D001F1227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4252EE7825A1B59D001F1227 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,9 +163,11 @@
 			children = (
 				4252EEB825A1E70C001F1227 /* MainViewController.swift */,
 				42E8423D25F3656D00E127D2 /* Extensions */,
-				426F06D925B8A10600C434E6 /* MainProtocols.swift */,
-				426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */,
+				422A829125F4BC97004A6B14 /* MainPresenter.swift */,
+				422A829625F4C1E0004A6B14 /* MainInteractor.swift */,
 				4290D00525BB33120033386C /* MainRouter.swift */,
+				426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */,
+				426F06D925B8A10600C434E6 /* MainProtocols.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -169,8 +179,8 @@
 				420A365025F3B306007E8363 /* Extensions */,
 				4252EEA025A1C129001F1227 /* ApplicationAboutPresenter.swift */,
 				4252EEA625A1C2F3001F1227 /* ApplicationAboutInteractor.swift */,
-				4252EE9325A1BBFB001F1227 /* ApplicationAboutConfigurator.swift */,
 				4252EEA325A1C13B001F1227 /* ApplicationAboutRouter.swift */,
+				4252EE9325A1BBFB001F1227 /* ApplicationAboutConfigurator.swift */,
 				4252EE9725A1BF5C001F1227 /* ApplicationAboutProtocols.swift */,
 			);
 			path = ApplicationAbout;
@@ -204,8 +214,10 @@
 		42CACA6225A9B2C800E38C83 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				422A829D25F4C9EE004A6B14 /* StorageService.swift */,
 				4252EEAB25A1D88C001F1227 /* NetworkService.swift */,
 				4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */,
+				422A829925F4C238004A6B14 /* CurrencyService.swift */,
 			);
 			name = NetworkService;
 			sourceTree = "<group>";
@@ -408,13 +420,16 @@
 				42F11A7E25B1B9D300BD0F26 /* Color.swift in Sources */,
 				42F11A8825B1C68000BD0F26 /* Font.swift in Sources */,
 				42F11A8B25B1CFAC00BD0F26 /* Button.swift in Sources */,
+				422A829725F4C1E0004A6B14 /* MainInteractor.swift in Sources */,
 				4252EE9425A1BBFB001F1227 /* ApplicationAboutConfigurator.swift in Sources */,
 				4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */,
 				42F11A8E25B1E09500BD0F26 /* TextField.swift in Sources */,
 				42558D3A25BF1B70004AD451 /* CurrencyView.swift in Sources */,
 				4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */,
 				420156F725B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift in Sources */,
+				422A829A25F4C238004A6B14 /* CurrencyService.swift in Sources */,
 				42DC3FF425BC7423008D38F0 /* CurrencyPickerView.swift in Sources */,
+				422A829225F4BC97004A6B14 /* MainPresenter.swift in Sources */,
 				426F06D125B88B2500C434E6 /* DetailExhangesRatesViewController.swift in Sources */,
 				426F06CD25B8877200C434E6 /* Image.swift in Sources */,
 				4252EE9B25A1BFE8001F1227 /* ApplicationAboutViewController.swift in Sources */,
@@ -431,6 +446,7 @@
 				42F11A9125B1E30900BD0F26 /* Label.swift in Sources */,
 				4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */,
 				4252EEA425A1C13B001F1227 /* ApplicationAboutRouter.swift in Sources */,
+				422A829E25F4C9EE004A6B14 /* StorageService.swift in Sources */,
 				42D73DD625A8A26B00E699B2 /* Descriptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

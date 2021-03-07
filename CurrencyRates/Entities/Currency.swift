@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Currency: Decodable {
+class Currency: Codable {
     
     let shortName: String
     let fullName: String

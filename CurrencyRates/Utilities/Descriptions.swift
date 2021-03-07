@@ -27,12 +27,19 @@ struct DescriptionOfCurrencies {
     }
 }
 
-struct DescriptionOfView {
+struct DescriptionOfViewMain {
     static let inputCurrencyPickerViewTitle = "Choose input currency"
     static let outputCurrencyPickerViewTitle = "Choose output currency"
     static let mainViewNameTitle = "Currency converter"
     static let aboutViewNameTitle = "About App"
     static let detailViewNameTitle = "Exchange rates"
+    static let labelAppNameTitle = "This is a free currency converter"
+    static let linkURL = "Special thanks for currency rates to"
+    
+}
+
+struct DescriptionOfViewApp {
+    static let linkURL = "https://free.currencyconverterapi.com"
 }
 
 struct DescriptionOfButton {

@@ -25,7 +25,7 @@ protocol MainViewControllerProtocol: class {
 }
 
 protocol MainPresenterProtocol: class {
-    var router: MainRouterProtocol! { set get }
+    //var router: MainRouterProtocol! { set get }
     var rateText: String { get }
     func configureView()
     func textFieldDidBeginEditing()
@@ -35,9 +35,9 @@ protocol MainPresenterProtocol: class {
     func outputCurrencyButtonClicked()
     func loadCurrenciesButtonClicked()
     func infoButtonClicked()
-    func showHUD()
+    //func showHUD()
     func showLoadCurrenciesButton()
-    func hideHUD()
+    //func hideHUD()
     func updateOutputValue()
     func showAlertView(with text: String)
     func inputCurrencyNameUpdated()
@@ -61,11 +61,11 @@ protocol MainInteractorProtocol: class {
 }
 
 protocol MainRouterProtocol: class {
-    //func showAboutScene()
+    func showAboutScene()
     //func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    func open()
+    //func open()
 }
 
 protocol MainConfiguratorProtocol: class {
-    func configure(with viewController: MainViewController)
+    static func configure() -> MainViewController
 }

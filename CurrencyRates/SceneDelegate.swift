@@ -34,10 +34,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.viewControllers = [firstController,
                                             secondTabNavigationControoller]
         
-        let item1 = UITabBarItem(title: DescriptionOfView.mainViewNameTitle,
+        let item1 = UITabBarItem(title: DescriptionOfViewMain.mainViewNameTitle,
                                  image: UIImage.appImage(.wallet),
                                  tag: 0)
-        let item2 = UITabBarItem(title: DescriptionOfView.detailViewNameTitle,
+        let item2 = UITabBarItem(title: DescriptionOfViewMain.detailViewNameTitle,
                                  image: UIImage.appImage(.wallet),
                                  tag: 1)
         

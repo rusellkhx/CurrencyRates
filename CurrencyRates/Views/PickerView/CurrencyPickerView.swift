@@ -33,7 +33,7 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         return view
     }()
     
-    let titleLabel = UILabel(text: DescriptionOfView.inputCurrencyPickerViewTitle,
+    let titleLabel = UILabel(text: DescriptionOfViewMain.inputCurrencyPickerViewTitle,
                              textColor: UIColor.appColor(.pickerTitleTextColor),
                              font: UIFont.appFont(.regular, size: 14))
     

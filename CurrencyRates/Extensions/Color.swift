@@ -21,6 +21,7 @@ extension UIColor {
         case pickerViewColor
         case navBarColor
         case white
+        case linkURL
     }
     
     static func appColor(_ name: AssetsColor) -> UIColor {

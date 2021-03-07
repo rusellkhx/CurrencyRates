@@ -84,9 +84,9 @@ extension MainViewController {
         }
         
         currencyPickerView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(currencyRatesView.snp.bottom).offset(20)
-            make.width.height.equalTo(50)
+            make.left.right.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(206)
+            make.height.equalTo(206)
         }
     }
 }
