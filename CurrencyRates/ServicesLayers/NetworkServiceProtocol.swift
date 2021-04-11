@@ -19,18 +19,4 @@ protocol NetworkServiceProtocol {
     func getRatio(inputCurrencyShortName: String,
                   outputCurrencyShortName: String,
                   completion: @escaping ([String: Any]?, Error?) -> Swift.Void)
-    
-    /*func request(urlString: String,
-     completion: @escaping (IdResponseBlock))
-     
-     func getRatio(inputCurrencyShortName: String,
-     outputCurrencyShortName: String,
-     completion: @escaping (IdResponseBlock))
-     
-     func createDataTask(from reqest: URLRequest,
-     completion: @escaping (IdResponseBlock)) -> URLSessionDataTask*/
 }
-
-
-
-

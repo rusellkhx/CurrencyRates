@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController, MainViewControllerProtocol {
-    
+   
     // MARK: - Public properties
     
     var presenter: MainPresenterProtocol?
@@ -42,7 +42,8 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
         return view
     }()
     
-    // MARK: intoView
+    // MARK: - intoView
+    
     private let inputTextField: UITextField = {
         let inputTextField = UITextField()
         inputTextField.textColor = UIColor.appColor(.inputTextColor)
@@ -88,6 +89,7 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.currencyPickerView.delegate = self
         infoButton.addTarget(self, action: #selector(open), for: .touchUpInside)
         updateView()
         setupConstraints()

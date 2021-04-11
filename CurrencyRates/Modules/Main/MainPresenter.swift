@@ -10,20 +10,12 @@ import UIKit
 
 class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
 
+// MARK: - Public properties
+    
     weak var view: MainViewControllerProtocol?
     var interactor: MainInteractorProtocol!
     var router: MainRouterProtocol!
     weak var currencyPickerView: CurrencyPickerViewProtocol?
-    
-    init(view: MainViewControllerProtocol,
-         interactor: MainInteractorProtocol,
-         router: MainRouterProtocol) {
-        
-        self.view = view
-        self.interactor = interactor
-        self.router = router
-        
-    }
     
     var inputValue: String? {
         set {
@@ -39,6 +31,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
             return input
         }
     }
+    
     var outputValue: String? {
         get {
             let formatter = NumberFormatter()
@@ -55,6 +48,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
             return output
         }
     }
+    
     var inputCurrencyShortName: String {
         get {
             return interactor.inputCurrencyShortName
@@ -66,8 +60,6 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
         }
     }
     
-    // MARK: - MainPresenterProtocol methods
-    
     var rateText: String {
         get {
             let inputShortName = interactor.inputCurrencyShortName
@@ -77,6 +69,17 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
             return "1 \(String(describing: inputShortName)) = \(String(describing: outputRatio)) \(String(describing: outputShortName))"
         }
     }
+    
+    init(view: MainViewControllerProtocol,
+         interactor: MainInteractorProtocol,
+         router: MainRouterProtocol) {
+        
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
+    
+    // MARK: - MainPresenterProtocol methods
     
     func configureView() {
         view?.setInputValue(with: inputValue)
@@ -105,6 +108,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
         interactor.inputCurrencyChanging()
         currencyPickerView?.title = DescriptionOfViewMain.inputCurrencyPickerViewTitle
         currencyPickerView?.arrayCurrencyNames = interactor.getCurrencyNames()
+        print(interactor.getCurrencyNames())
         currencyPickerView?.reload()
         currencyPickerView?.selectedCurrencyIndex = interactor.inputCurrencyIndex
         view?.showPickerView()
@@ -127,18 +131,6 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
     func infoButtonClicked() {
         router.showAboutScene()
     }
-    
-    /*func showHUD() {
-        view.showHUD()
-    }*/
-    
-    /*func showLoadCurrenciesButton() {
-        view?.showLoadCurrenciesButton()
-    }*/
-    
-    /*func hideHUD() {
-        view.hideHUD()
-    }*/
     
     func updateOutputValue() {
         updateOutputValue(with: inputValue)

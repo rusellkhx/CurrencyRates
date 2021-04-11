@@ -9,7 +9,7 @@
 import Foundation
 
 struct CurrencyError : Error {
-    let description : String    
+    let description : String
     var localizedDesc: String {
         return NSLocalizedString(description, comment: "")
     }
@@ -53,6 +53,7 @@ class CurrencyService: CurrencyServiceProtocol {
             return value
         }
     }
+    
     var inputCurrency: Currency {
         didSet {
             if (oldValue != inputCurrency) {
@@ -60,6 +61,7 @@ class CurrencyService: CurrencyServiceProtocol {
             }
         }
     }
+    
     var outputCurrency: Currency {
         didSet {
             if (oldValue != outputCurrency) {
@@ -99,7 +101,6 @@ class CurrencyService: CurrencyServiceProtocol {
             var inputCurrencyUpdated = false
             var outputCurrencyUpdated = false
             
-            
             for currency in currencies {
                 let name = "\(currency.shortName) : \(currency.fullName)"
                 currencyNames.append(name)
@@ -119,6 +120,7 @@ class CurrencyService: CurrencyServiceProtocol {
             if !inputCurrencyUpdated {
                 inputCurrency = currencies.first!
             }
+            
             if !outputCurrencyUpdated {
                 outputCurrency = currencies.first!
             }
@@ -128,10 +130,10 @@ class CurrencyService: CurrencyServiceProtocol {
     func saveOutputCurrencyRatio(with dict: [String: Any], completion: @escaping (CurrencyError?) -> Swift.Void) {
         let key = "\(inputCurrency.shortName)_\(outputCurrency.shortName)"
         
-        if let dictValue = dict[key] as! [String: Double]? {
-            if dictValue.count > 0 {
+        if let dictValue = dict[key] as? [String: Double]? {
+            if dictValue?.count ?? 0 > 0 {
                 
-                if let val = dictValue["val"] {
+                if let val = dictValue?["val"] {
                     outputCurrency.ratio = val
                     storageService.saveOutputCurrency(with: outputCurrency)
                     completion(nil)

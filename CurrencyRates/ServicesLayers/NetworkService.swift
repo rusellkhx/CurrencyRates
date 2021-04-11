@@ -7,6 +7,8 @@
 
 import UIKit
 
+let apiKey = "d658dd814353d011cb02"
+
 class NetworkService: NetworkServiceProtocol {
     
     var urlRatesSource: String {
@@ -64,28 +66,11 @@ class NetworkService: NetworkServiceProtocol {
         dataTask.resume()
     }
     
-    private let URLAllCurrencies = "https://free.currencyconverterapi.com/api/v5/currencies"
+    private let URLAllCurrencies = "https://free.currconv.com/api/v7/currencies?apiKey=\(apiKey)"
     
     private func URLGetRatio(inputCurrencyShortName: String, outputCurrencyShortName: String) -> String {
-        return "https://free.currencyconverterapi.com/api/v5/convert?q=\(inputCurrencyShortName)_\(outputCurrencyShortName)&compact=y"
+        return "https://free.currconv.com/api/v7/convert?q=\(inputCurrencyShortName)_\(outputCurrencyShortName)&compact=ultra&apiKey=\(apiKey)"
     }
     
-    
-    
-    
-    /*func request(urlString: String, completion: @escaping (IdResponseBlock)) {
-     guard let url = URL(string: urlString) else { return }
-     let request = URLRequest(url: url)
-     let task = createDataTask(from: request, completion: completion)
-     task.resume()
-     }
-     
-     internal func createDataTask(from reqest: URLRequest, completion: @escaping (IdResponseBlock)) -> URLSessionDataTask {
-     return URLSession.shared.dataTask(with: reqest) { (data, response, error) in
-     DispatchQueue.main.async {
-     completion(data, error)
-     }
-     }
-     }*/
 }
 

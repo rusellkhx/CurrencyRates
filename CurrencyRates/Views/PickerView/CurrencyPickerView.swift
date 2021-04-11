@@ -41,7 +41,7 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         let cancelButton = UIButton(title: DescriptionOfButton.cancel,
                                     titleColor: UIColor.appColor(.pickerTitleTextColor),
                                     backgroundColor: UIColor.appColor(.pickerViewColor),
-                                    font: UIFont.appFont(.regular, size: 14),
+                                    font: UIFont.appFont(.regular, size: 16),
                                     isShadow: false,
                                     cornerRadius: 10)
         
@@ -52,7 +52,7 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         let aplyButton = UIButton(title: DescriptionOfButton.aply,
                                   titleColor: UIColor.appColor(.pickerTitleTextColor),
                                   backgroundColor: UIColor.appColor(.pickerViewColor),
-                                  font: UIFont.appFont(.regular, size: 14),
+                                  font: UIFont.appFont(.regular, size: 16),
                                   isShadow: false,
                                   cornerRadius: 10)
         return aplyButton
@@ -73,8 +73,6 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
     }
 
     private func setupUI() {
-        //Bundle.main.loadNibNamed("CurrencyPickerView", owner: self, options: nil)
-        
         cancelButton.addTarget(
             self,
             action: #selector(cancelButtonClicked),
@@ -94,6 +92,9 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         view.addSubview(aplyButton)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        pickerView.dataSource = self
+        pickerView.delegate = self
         
         view.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
@@ -141,7 +142,8 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         }
     }
 }
-    // MARK: - UIPickerView dataSource methods
+
+// MARK: - UIPickerView dataSource methods
 extension CurrencyPickerView: UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return numberOfComponents
@@ -157,11 +159,11 @@ extension CurrencyPickerView: UIPickerViewDelegate {
 }
     // MARK: - Action methods
 extension CurrencyPickerView: UIPickerViewDataSource {
-    @objc func cancelButtonClicked(_ sender: Any) {
+    @objc func cancelButtonClicked(_ sender: UIButton) {
         delegate?.currencyPickerViewCancelButtonClicked()
     }
     
-    @objc func applyButtonClicked(_ sender: Any) {
+    @objc func applyButtonClicked(_ sender: UIButton) {
         delegate?.currencyPickerViewApplyButtonClicked(selectedRow: pickerView.selectedRow(inComponent: componentIndex))
     }
 }

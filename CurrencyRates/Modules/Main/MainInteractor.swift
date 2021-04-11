@@ -13,16 +13,12 @@ enum CurrencyChangingMode {
 class MainInteractor: MainInteractorProtocol {
     
     weak var presenter: MainPresenterProtocol!
-    
     let currencyService: CurrencyServiceProtocol?
     let networkService: NetworkServiceProtocol?
-    
     var currencyChangingMode: CurrencyChangingMode?
     
-    init(//presenter: MainPresenterProtocol,
-         currencyService: CurrencyServiceProtocol,
+    init(currencyService: CurrencyServiceProtocol,
          networkService: NetworkServiceProtocol) {
-        //self.presenter = presenter
         self.currencyService = currencyService
         self.networkService = networkService
     }
@@ -30,23 +26,26 @@ class MainInteractor: MainInteractorProtocol {
     // MARK: - MainInteractorProtocol methods
     
     var inputValue: Double {
-        set {
-            currencyService?.inputValue = newValue
-        }
         get {
             return currencyService?.inputValue ?? 0.0
         }
+        set {
+            currencyService?.inputValue = newValue
+        }
     }
+    
     var outputValue: Double {
         get {
             return currencyService?.outputValue ?? 0.0
         }
     }
+    
     var inputCurrencyShortName: String {
         get {
             return currencyService?.inputCurrency.shortName ?? "USD"
         }
     }
+    
     var outputCurrencyShortName: String {
         get {
             return currencyService?.outputCurrency.shortName ?? "USD"
@@ -72,12 +71,9 @@ class MainInteractor: MainInteractorProtocol {
     }
     
     func getAllCurrencies() {
-        //presenter.showHUD()
         networkService?.getAllCurrencies { [weak self] (dict, error) in
             guard let self = self else { return }
             if let error = error {
-                //self.presenter.hideHUD()
-                //self.presenter?.showLoadCurrenciesButton()
                 self.presenter?.showAlertView(with: error.localizedDescription)
                 return
             }
@@ -86,7 +82,6 @@ class MainInteractor: MainInteractorProtocol {
                 self.currencyService?.saveAllCurrencies(with: dictResponse, completion: { [weak self] (error) in
                     guard let self = self else { return }
                     if let error = error {
-                        //self.presenter.hideHUD()
                         self.presenter?.showAlertView(with: error.localizedDesc)
                         return
                     }
@@ -98,7 +93,6 @@ class MainInteractor: MainInteractorProtocol {
     }
     
     func getOutputCurrencyRatio(newCurrency: Currency?) {
-        //presenter.showHUD()
         
         var requestInputCurrencyShortName = inputCurrencyShortName
         var requestOutputCurrencyShortName = outputCurrencyShortName
@@ -114,7 +108,6 @@ class MainInteractor: MainInteractorProtocol {
         
         networkService?.getRatio(inputCurrencyShortName: requestInputCurrencyShortName, outputCurrencyShortName: requestOutputCurrencyShortName) { [weak self] (dict, error) in
             guard let self = self else { return }
-            //self.presenter.hideHUD()
             
             if error != nil {
                 if let errorText = error?.localizedDescription {
@@ -149,6 +142,7 @@ class MainInteractor: MainInteractorProtocol {
     }
     
     func getCurrencyNames() -> [String] {
+        print(currencyService?.currencyNames ?? [])
         return currencyService?.currencyNames ?? []
     }
     
@@ -161,7 +155,6 @@ class MainInteractor: MainInteractorProtocol {
     }
     
     func currencyChanged(selectedIndex: Int) {
-        
         if currencyService?.currencies.count ?? 0 > selectedIndex {
             let newCurrency = currencyService?.currencies[selectedIndex]
             getOutputCurrencyRatio(newCurrency: newCurrency)
