@@ -95,8 +95,6 @@ class CurrencyView: UIView {
     
     private func setupConstraints() {
         
-        
-        
         intoView.snp.makeConstraints { make in
             make.top.equalTo(self).offset(25)
             make.left.right.equalTo(self).inset(20)

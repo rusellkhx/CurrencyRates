@@ -74,6 +74,19 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
 
     private func setupUI() {
         //Bundle.main.loadNibNamed("CurrencyPickerView", owner: self, options: nil)
+        
+        cancelButton.addTarget(
+            self,
+            action: #selector(cancelButtonClicked),
+            for: .touchUpInside
+        )
+        
+        aplyButton.addTarget(
+            self,
+            action: #selector(applyButtonClicked),
+            for: .touchUpInside
+        )
+        
         addSubview(view)
         addSubview(pickerView)
         view.addSubview(titleLabel)
@@ -90,8 +103,8 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         pickerView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(view.snp.bottom)
-            //make.width.equalTo(375)
-            //make.height.equalTo(165)
+            make.width.equalTo(375)
+            make.height.equalTo(165)
         }
         
         cancelButton.snp.makeConstraints { make in
@@ -107,7 +120,6 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         titleLabel.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
         }
-        
         
     }
     
@@ -145,11 +157,11 @@ extension CurrencyPickerView: UIPickerViewDelegate {
 }
     // MARK: - Action methods
 extension CurrencyPickerView: UIPickerViewDataSource {
-    func cancelButtonClicked(_ sender: UIButton) {
+    @objc func cancelButtonClicked(_ sender: Any) {
         delegate?.currencyPickerViewCancelButtonClicked()
     }
     
-    func applyButtonClicked(_ sender: UIButton) {
+    @objc func applyButtonClicked(_ sender: Any) {
         delegate?.currencyPickerViewApplyButtonClicked(selectedRow: pickerView.selectedRow(inComponent: componentIndex))
     }
 }

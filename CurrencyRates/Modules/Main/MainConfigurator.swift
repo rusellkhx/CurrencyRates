@@ -14,9 +14,8 @@ class MainConfigurator: MainConfiguratorProtocol {
         let view = MainViewController()
         let router = MainRouter(viewController: view)
         
-        let interactor = MainInteractor(presenter: presenter,
-                                        currencyService: CurrencyServiceProtocol,
-                                        networkService: NetworkServiceProtocol)
+        let interactor = MainInteractor(currencyService: CurrencyService(),
+                                        networkService: NetworkService())
         
         let presenter = MainPresenter(view: view,
                                       interactor: interactor,

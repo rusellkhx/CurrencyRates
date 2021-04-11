@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         tabBarController.tabBar.barTintColor = .white
-        let mainVC = MainViewController()
+        let mainVC = MainConfigurator.configure()
         let aboutVC = ApplicationAboutConfigurator.configure()
         
         firstController = mainVC

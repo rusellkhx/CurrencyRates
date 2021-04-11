@@ -12,17 +12,17 @@ enum CurrencyChangingMode {
 
 class MainInteractor: MainInteractorProtocol {
     
-    weak var presenter: MainPresenterProtocol?
+    weak var presenter: MainPresenterProtocol!
     
     let currencyService: CurrencyServiceProtocol?
     let networkService: NetworkServiceProtocol?
     
     var currencyChangingMode: CurrencyChangingMode?
     
-    init(presenter: MainPresenterProtocol,
+    init(//presenter: MainPresenterProtocol,
          currencyService: CurrencyServiceProtocol,
          networkService: NetworkServiceProtocol) {
-        self.presenter = presenter
+        //self.presenter = presenter
         self.currencyService = currencyService
         self.networkService = networkService
     }
@@ -77,7 +77,7 @@ class MainInteractor: MainInteractorProtocol {
             guard let self = self else { return }
             if let error = error {
                 //self.presenter.hideHUD()
-                self.presenter?.showLoadCurrenciesButton()
+                //self.presenter?.showLoadCurrenciesButton()
                 self.presenter?.showAlertView(with: error.localizedDescription)
                 return
             }
