@@ -121,7 +121,6 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         titleLabel.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
         }
-        
     }
     
 // MARK: - CurrencyPickerViewProtocol

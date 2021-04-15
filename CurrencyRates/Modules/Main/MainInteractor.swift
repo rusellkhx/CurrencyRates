@@ -12,10 +12,11 @@ enum CurrencyChangingMode {
 
 class MainInteractor: MainInteractorProtocol {
     
-    weak var presenter: MainPresenterProtocol!
+    weak var presenter: MainPresenterProtocol?
     let currencyService: CurrencyServiceProtocol?
     let networkService: NetworkServiceProtocol?
     var currencyChangingMode: CurrencyChangingMode?
+    weak var output: MainInteractorProtocolOutput?
     
     init(currencyService: CurrencyServiceProtocol,
          networkService: NetworkServiceProtocol) {
@@ -121,10 +122,10 @@ class MainInteractor: MainInteractorProtocol {
                     switch mode {
                     case .inputCurrencyChanging:
                         self.currencyService?.inputCurrency = newCurrency
-                        self.presenter?.inputCurrencyNameUpdated()
+                        self.output?.inputCurrencyNameUpdated()
                     case .outputCurrencyChanging:
                         self.currencyService?.outputCurrency = newCurrency
-                        self.presenter?.outputCurrencyNameUpdated()
+                        self.output?.outputCurrencyNameUpdated()
                     }
                 }
                 
@@ -142,7 +143,6 @@ class MainInteractor: MainInteractorProtocol {
     }
     
     func getCurrencyNames() -> [String] {
-        print(currencyService?.currencyNames ?? [])
         return currencyService?.currencyNames ?? []
     }
     

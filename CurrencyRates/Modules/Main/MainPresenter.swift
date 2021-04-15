@@ -13,9 +13,9 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
 // MARK: - Public properties
     
     weak var view: MainViewControllerProtocol?
-    var interactor: MainInteractorProtocol!
-    var router: MainRouterProtocol!
     weak var currencyPickerView: CurrencyPickerViewProtocol?
+    var interactor: MainInteractorProtocol
+    var router: MainRouterProtocol
     
     var inputValue: String? {
         set {
@@ -23,6 +23,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
                 interactor.inputValue = Double(value) ?? 0.0
             }
         }
+        
         get {
             var input = String(interactor.inputValue)
             if input.hasSuffix(".0") {
@@ -43,7 +44,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
             var output = formatter.string(from: number)
             
             if ((output?.hasSuffix(".00")) != nil) {
-                output?.removeLast(2)
+                output?.removeLast(0)
             }
             return output
         }
@@ -51,6 +52,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
     
     var inputCurrencyShortName: String {
         get {
+            print(interactor.inputCurrencyShortName)
             return interactor.inputCurrencyShortName
         }
     }
@@ -66,7 +68,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
             let outputRatio = interactor.outputCurrencyRatio
             let outputShortName = interactor.outputCurrencyShortName
             
-            return "1 \(String(describing: inputShortName)) = \(String(describing: outputRatio)) \(String(describing: outputShortName))"
+            return "1 \(inputShortName) = \(outputRatio) \(outputShortName)"
         }
     }
     
@@ -108,7 +110,6 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
         interactor.inputCurrencyChanging()
         currencyPickerView?.title = DescriptionOfViewMain.inputCurrencyPickerViewTitle
         currencyPickerView?.arrayCurrencyNames = interactor.getCurrencyNames()
-        print(interactor.getCurrencyNames())
         currencyPickerView?.reload()
         currencyPickerView?.selectedCurrencyIndex = interactor.inputCurrencyIndex
         view?.showPickerView()
@@ -141,6 +142,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
     }
     
     func inputCurrencyNameUpdated() {
+        print(inputCurrencyShortName)
         view?.setInputCurrencyShortName(with: inputCurrencyShortName)
     }
     
@@ -160,6 +162,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
     
     func currencyPickerViewApplyButtonClicked(selectedRow: Int) {
         view?.hidePickerView()
+        print(selectedRow)
         interactor.currencyChanged(selectedIndex: selectedRow)
     }
     
@@ -172,4 +175,8 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
         }
         
     }
+}
+
+extension MainPresenter: MainInteractorProtocolOutput {
+    
 }

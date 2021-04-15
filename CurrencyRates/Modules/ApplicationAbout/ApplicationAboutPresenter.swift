@@ -9,8 +9,8 @@ import UIKit
 
 class ApplicationAboutPresenter: ApplicationAboutPresenterProtocol {
     
-    private let router: ApplicationAboutRouterProtocol
-    private let interactor: ApplicationAboutInteractorProtocol
+    private let router: ApplicationAboutRouterProtocol?
+    private let interactor: ApplicationAboutInteractorProtocol?
     private weak var view: ApplicationAboutViewControllerProtocol?
     
     init(view: ApplicationAboutViewControllerProtocol,
@@ -22,16 +22,16 @@ class ApplicationAboutPresenter: ApplicationAboutPresenterProtocol {
     }
     
     func configureView() {
-        view?.setUrlButtonTitle(title: interactor.urlRatesSource)
+        view?.setUrlButtonTitle(title: interactor?.urlRatesSource)
     }
     
     func closeButtonPush() {
-        router.closeCurrentViewController()
+        router?.closeCurrentViewController()
     }
     
     func urlButtonPush(urlString: String?) {
         if let url = urlString {
-            interactor.openUrl(urlString: url)
+            interactor?.openUrl(urlString: url)
         }
     }
 }

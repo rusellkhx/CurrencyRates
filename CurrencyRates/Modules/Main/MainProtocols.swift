@@ -40,8 +40,7 @@ protocol MainPresenterProtocol: class {
     //func hideHUD()
     func updateOutputValue()
     func showAlertView(with text: String)
-    func inputCurrencyNameUpdated()
-    func outputCurrencyNameUpdated()
+
     func updateRateText()
 }
 
@@ -58,6 +57,11 @@ protocol MainInteractorProtocol: class {
     func inputCurrencyChanging()
     func outputCurrencyChanging()
     func currencyChanged(selectedIndex: Int)
+}
+
+protocol MainInteractorProtocolOutput: class {
+    func inputCurrencyNameUpdated()
+    func outputCurrencyNameUpdated()
 }
 
 protocol MainRouterProtocol: class {

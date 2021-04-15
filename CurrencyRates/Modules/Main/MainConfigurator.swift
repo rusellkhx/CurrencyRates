@@ -24,6 +24,7 @@ class MainConfigurator: MainConfiguratorProtocol {
         view.presenter = presenter
         presenter.interactor = interactor
         presenter.router = router
+        interactor.output = presenter
         presenter.currencyPickerView = view.currencyPickerView
         view.currencyPickerView.delegate = presenter
         return view

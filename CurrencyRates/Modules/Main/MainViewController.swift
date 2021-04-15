@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController, MainViewControllerProtocol {
+class MainViewController: UIViewController, MainViewControllerProtocol, UITextFieldDelegate {
    
     // MARK: - Public properties
     
@@ -89,7 +89,8 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.currencyPickerView.delegate = self
+        
+        inputTextField.delegate = self
         infoButton.addTarget(self, action: #selector(open), for: .touchUpInside)
         updateView()
         setupConstraints()
@@ -208,6 +209,10 @@ extension MainViewController {
     
     private func updateView() {
         view.backgroundColor = UIColor.appColor(.mainViewBackgroundColor)
+        
+        outputTextLabel.adjustsFontSizeToFitWidth = true
+        outputTextLabel.minimumScaleFactor = 0.5
+        
         view.addSubview(intoView)
         view.addSubview(outoView)
         view.addSubview(currencyRatesView)
