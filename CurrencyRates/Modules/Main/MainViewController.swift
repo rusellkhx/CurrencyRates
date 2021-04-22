@@ -131,7 +131,8 @@ class MainViewController: UIViewController, MainViewControllerProtocol, UITextFi
         return true
     }
         
-    // MARK: - MainViewProtocol methods
+
+// MARK: - Extension MainViewProtocol
     
     func setInputValue(with value: String?) {
         DispatchQueue.main.async {
@@ -176,7 +177,6 @@ class MainViewController: UIViewController, MainViewControllerProtocol, UITextFi
             self.offsetBottomCurrencyPickerView = 0
             self.updateConstarintsLoadPickerView()
             self.view.layoutIfNeeded()
-            //self.view.setNeedsLayout() this for test animation
         }
     }
     
@@ -185,7 +185,6 @@ class MainViewController: UIViewController, MainViewControllerProtocol, UITextFi
             self.offsetBottomCurrencyPickerView = 206
             self.updateConstarintsHidePickerView()
             self.view.layoutIfNeeded()
-            //self.view.setNeedsLayout() this for test animation
         }
     }
     
@@ -198,9 +197,6 @@ class MainViewController: UIViewController, MainViewControllerProtocol, UITextFi
             self.currencyRatesTextLabel.text = rateText
         }
     }
-    
-    // MARK: - Navigation methods
-    
 }
 
 // MARK: - Extension MainViewController
@@ -311,6 +307,9 @@ extension MainViewController {
             make.height.equalTo(206)
         }
     }
+    
+    
+    // MARK: - Private methods
     
     private func updateConstarintsLoadPickerView() {
         currencyPickerView.snp.updateConstraints { make in

@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 extension ApplicationAboutViewController {
-    
     internal func updateView() {
         view.backgroundColor = .white
         view.addSubview(urlButton)
@@ -45,5 +44,3 @@ extension ApplicationAboutViewController {
         }
     }
 }
-
-

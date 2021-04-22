@@ -10,22 +10,28 @@ enum CurrencyChangingMode {
     case outputCurrencyChanging
 }
 
-class MainInteractor: MainInteractorProtocol {
+class MainInteractor {
+    
+    // MARK: - Public properties
     
     weak var presenter: MainPresenterProtocol?
+    weak var output: MainInteractorProtocolOutput?
     let currencyService: CurrencyServiceProtocol?
     let networkService: NetworkServiceProtocol?
     var currencyChangingMode: CurrencyChangingMode?
-    weak var output: MainInteractorProtocolOutput?
+
+    // MARK: - Lifecycle
     
     init(currencyService: CurrencyServiceProtocol,
          networkService: NetworkServiceProtocol) {
         self.currencyService = currencyService
         self.networkService = networkService
     }
+}
     
-    // MARK: - MainInteractorProtocol methods
+// MARK: - Extension MainInteractorProtocol
     
+extension MainInteractor: MainInteractorProtocol {
     var inputValue: Double {
         get {
             return currencyService?.inputValue ?? 0.0

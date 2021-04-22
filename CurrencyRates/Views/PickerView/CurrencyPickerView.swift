@@ -21,6 +21,8 @@ protocol CurrencyPickerViewDelegate {
 
 class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
     
+    // MARK: - Public properties
+    
     let view: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.appColor(.pickerViewColor)
@@ -58,9 +60,16 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         return aplyButton
     }()
     
+    // MARK: - Delegates
+    
     var delegate: CurrencyPickerViewDelegate?
+    
+    // MARK: - Private properties
+    
     private let numberOfComponents = 1
     private let componentIndex = 0
+    
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,6 +81,8 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         setupUI()
     }
 
+    // MARK: - Private methods
+    
     private func setupUI() {
         cancelButton.addTarget(
             self,
@@ -124,6 +135,7 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
     }
     
 // MARK: - CurrencyPickerViewProtocol
+    
     var arrayCurrencyNames = [String]()
     var title = "" {
         didSet {
@@ -143,6 +155,7 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
 }
 
 // MARK: - UIPickerView dataSource methods
+
 extension CurrencyPickerView: UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return numberOfComponents
@@ -156,7 +169,8 @@ extension CurrencyPickerView: UIPickerViewDelegate {
         return arrayCurrencyNames[row]
     }
 }
-    // MARK: - Action methods
+// MARK: - Extension UIPickerViewDataSource
+
 extension CurrencyPickerView: UIPickerViewDataSource {
     @objc func cancelButtonClicked(_ sender: UIButton) {
         delegate?.currencyPickerViewCancelButtonClicked()

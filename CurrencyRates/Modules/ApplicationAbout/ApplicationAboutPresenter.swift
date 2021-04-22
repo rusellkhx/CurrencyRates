@@ -7,11 +7,15 @@
 
 import UIKit
 
-class ApplicationAboutPresenter: ApplicationAboutPresenterProtocol {
+class ApplicationAboutPresenter {
+    
+    // MARK: - Private properties
     
     private let router: ApplicationAboutRouterProtocol?
     private let interactor: ApplicationAboutInteractorProtocol?
     private weak var view: ApplicationAboutViewControllerProtocol?
+    
+    // MARK: - Lifecycle
     
     init(view: ApplicationAboutViewControllerProtocol,
          interactor: ApplicationAboutInteractorProtocol,
@@ -20,7 +24,11 @@ class ApplicationAboutPresenter: ApplicationAboutPresenterProtocol {
          self.interactor = interactor
          self.router = router
     }
+}
+
+// MARK: - Extension
     
+extension ApplicationAboutPresenter: ApplicationAboutPresenterProtocol {
     func configureView() {
         view?.setUrlButtonTitle(title: interactor?.urlRatesSource)
     }

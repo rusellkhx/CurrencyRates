@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension UIFont {
     
     static private let familyFont = "OpenSans-"
@@ -35,4 +34,3 @@ extension UIFont {
         return font
     }
 }
-

@@ -5,18 +5,12 @@
 //  Created by Rusell on 20.01.2021.
 //  Copyright © 2018 Loftymoon. All rights reserved.
 
-import Foundation
-import UIKit
-
 protocol MainViewControllerProtocol: class {
     func setInputValue(with value: String?)
     func setOutputValue(with value: String?)
     func setInputCurrencyShortName(with shortName: String)
     func setOutputCurrencyShortName(with shortName: String)
     func addDoneOnInputCurrencyKeyboard()
-    //func showHUD()
-    //func showLoadCurrenciesButton()
-    //func hideHUD()
     func showAlertView(with text: String)
     func showPickerView()
     func hidePickerView()
@@ -25,7 +19,6 @@ protocol MainViewControllerProtocol: class {
 }
 
 protocol MainPresenterProtocol: class {
-    //var router: MainRouterProtocol! { set get }
     var rateText: String { get }
     func configureView()
     func textFieldDidBeginEditing()
@@ -35,9 +28,6 @@ protocol MainPresenterProtocol: class {
     func outputCurrencyButtonClicked()
     func loadCurrenciesButtonClicked()
     func infoButtonClicked()
-    //func showHUD()
-    //func showLoadCurrenciesButton()
-    //func hideHUD()
     func showAlertView(with text: String)
 }
 
@@ -65,8 +55,6 @@ protocol MainInteractorProtocolOutput: class {
 
 protocol MainRouterProtocol: class {
     func showAboutScene()
-    //func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    //func open()
 }
 
 protocol MainConfiguratorProtocol: class {

@@ -29,4 +29,3 @@ protocol ApplicationAboutInteractorProtocol: class {
     var urlRatesSource: String { get }
     func openUrl(urlString: String?)
 }
-

@@ -14,5 +14,4 @@ class ApplicationAboutRouter: ApplicationAboutRouterProtocol {
     func closeCurrentViewController() {
         view?.dismiss(animated: true, completion: nil)
     }
-    
 }

@@ -5,12 +5,11 @@
 //  Created by Rusell on 07.03.2021.
 //
 
-import Foundation
 import UIKit
 
-class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
+class MainPresenter {
 
-// MARK: - Public properties
+    // MARK: - Public properties
     
     weak var view: MainViewControllerProtocol?
     weak var currencyPickerView: CurrencyPickerViewProtocol?
@@ -72,6 +71,8 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
         }
     }
     
+    // MARK: - Lifecycle
+    
     init(view: MainViewControllerProtocol,
          interactor: MainInteractorProtocol,
          router: MainRouterProtocol) {
@@ -80,9 +81,11 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
         self.interactor = interactor
         self.router = router
     }
-    
-    // MARK: - MainPresenterProtocol methods
-    
+}
+
+// MARK: - Extension MainPresenterProtocol
+
+extension MainPresenter: MainPresenterProtocol {
     func configureView() {
         view?.setInputValue(with: inputValue)
         view?.setOutputValue(with: outputValue)
@@ -153,9 +156,12 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
     func updateRateText() {
         view?.setRateText(with: rateText)
     }
-    
-    // MARK: - CurrencyPickerViewDelegate methods
-    
+}
+
+
+// MARK: - Extension CurrencyPickerViewDelegate
+
+extension MainPresenter: CurrencyPickerViewDelegate {
     func currencyPickerViewCancelButtonClicked() {
         view?.hidePickerView()
     }
@@ -176,6 +182,8 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
         
     }
 }
+
+// MARK: - Extension MainInteractorProtocolOutput
 
 extension MainPresenter: MainInteractorProtocolOutput {
     

@@ -5,11 +5,7 @@
 //  Created by Rusell on 20.01.2021.
 //
 
-import Foundation
-import UIKit
-
 class MainConfigurator: MainConfiguratorProtocol {
-    
     static func configure() -> MainViewController {
         let view = MainViewController()
         let router = MainRouter(viewController: view)
@@ -30,4 +26,3 @@ class MainConfigurator: MainConfiguratorProtocol {
         return view
     }
 }
-

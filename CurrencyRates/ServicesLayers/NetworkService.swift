@@ -72,6 +72,4 @@ class NetworkService: NetworkServiceProtocol {
     private func URLGetRatio(inputCurrencyShortName: String, outputCurrencyShortName: String) -> String {
         return "https://free.currconv.com/api/v7/convert?q=\(inputCurrencyShortName)_\(outputCurrencyShortName)&compact=ultra&apiKey=\(apiKey)"
     }
-    
 }
-
