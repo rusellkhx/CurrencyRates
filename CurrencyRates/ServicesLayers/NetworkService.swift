@@ -49,6 +49,7 @@ class NetworkService: NetworkServiceProtocol {
             }
             
             if let dataResponse = data {
+            
                 do {
                     let json = try JSONSerialization.jsonObject(with: dataResponse, options: []) as! [String: AnyObject]
                     

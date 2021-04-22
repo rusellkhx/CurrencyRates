@@ -12,7 +12,8 @@ extension UIImage {
     enum AssetImage: String {
         
         case creditcard
-        case wallet = "wallet.pass.fill"
+        case wallet = "wallet"
+        case about = "about"
         
     }
     

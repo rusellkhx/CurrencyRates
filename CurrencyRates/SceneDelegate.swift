@@ -24,7 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let tabBarController = UITabBarController()
+        tabBarController.tabBar.isTranslucent = false
+        tabBarController.tabBar.tintColor = .blue
         tabBarController.tabBar.barTintColor = .white
+
         let mainVC = MainConfigurator.configure()
         let aboutVC = ApplicationAboutConfigurator.configure()
         
@@ -38,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                  image: UIImage.appImage(.wallet),
                                  tag: 0)
         let item2 = UITabBarItem(title: DescriptionOfViewMain.detailViewNameTitle,
-                                 image: UIImage.appImage(.wallet),
+                                 image: UIImage.appImage(.about),
                                  tag: 1)
         
         firstController.tabBarItem = item1

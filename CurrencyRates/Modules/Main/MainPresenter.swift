@@ -40,7 +40,7 @@ class MainPresenter: MainPresenterProtocol, CurrencyPickerViewDelegate {
             formatter.maximumFractionDigits = 2
             formatter.roundingMode = .down
             formatter.usesGroupingSeparator = false
-            let number = NSNumber(value: interactor.outputValue )
+            let number = NSNumber(value: interactor.outputValue)
             var output = formatter.string(from: number)
             
             if ((output?.hasSuffix(".00")) != nil) {

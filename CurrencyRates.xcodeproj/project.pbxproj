@@ -27,10 +27,8 @@
 		4252EEAC25A1D88C001F1227 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEAB25A1D88C001F1227 /* NetworkService.swift */; };
 		4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */; };
 		4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252EEB825A1E70C001F1227 /* MainViewController.swift */; };
-		42558D3A25BF1B70004AD451 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42558D3925BF1B70004AD451 /* CurrencyView.swift */; };
 		426F06CD25B8877200C434E6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06CC25B8877200C434E6 /* Image.swift */; };
 		426F06D125B88B2500C434E6 /* DetailExhangesRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06D025B88B2500C434E6 /* DetailExhangesRatesViewController.swift */; };
-		426F06D625B8996200C434E6 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06D525B8996200C434E6 /* Builder.swift */; };
 		426F06DA25B8A10600C434E6 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06D925B8A10600C434E6 /* MainProtocols.swift */; };
 		426F06DD25B8A27B00C434E6 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */; };
 		4290D00625BB33120033386C /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4290D00525BB33120033386C /* MainRouter.swift */; };
@@ -69,10 +67,8 @@
 		4252EEAB25A1D88C001F1227 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		4252EEB825A1E70C001F1227 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		42558D3925BF1B70004AD451 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		426F06CC25B8877200C434E6 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		426F06D025B88B2500C434E6 /* DetailExhangesRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExhangesRatesViewController.swift; sourceTree = "<group>"; };
-		426F06D525B8996200C434E6 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		426F06D925B8A10600C434E6 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		426F06DC25B8A27B00C434E6 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
 		4290D00525BB33120033386C /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -130,12 +126,12 @@
 		4252EE7525A1B59D001F1227 /* CurrencyRates */ = {
 			isa = PBXGroup;
 			children = (
-				42DC3FF125BC73FC008D38F0 /* Views */,
+				4252EEAA25A1D555001F1227 /* ServicesLayers */,
 				42F11A7C25B1B9B800BD0F26 /* Extensions */,
 				42D73DD425A8A23F00E699B2 /* Utilities */,
-				42D73DCB25A89B9900E699B2 /* Entities */,
-				4252EEAA25A1D555001F1227 /* ServicesLayers */,
 				4252EE8F25A1BB28001F1227 /* Modules */,
+				42DC3FF125BC73FC008D38F0 /* Views */,
+				42D73DCB25A89B9900E699B2 /* Entities */,
 				4252EE7625A1B59D001F1227 /* AppDelegate.swift */,
 				4252EE7825A1B59D001F1227 /* SceneDelegate.swift */,
 				4252EE7F25A1B59E001F1227 /* Assets.xcassets */,
@@ -151,7 +147,6 @@
 				4252EE9125A1BB38001F1227 /* Main */,
 				4252EE9225A1BB48001F1227 /* ApplicationAbout */,
 				426F06CF25B88AE700C434E6 /* Detail */,
-				426F06D525B8996200C434E6 /* Builder.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -211,7 +206,6 @@
 		42CACA6225A9B2C800E38C83 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				422A829D25F4C9EE004A6B14 /* StorageService.swift */,
 				4252EEAB25A1D88C001F1227 /* NetworkService.swift */,
 				4252EEAF25A1D8DC001F1227 /* NetworkServiceProtocol.swift */,
 				422A829925F4C238004A6B14 /* CurrencyService.swift */,
@@ -222,6 +216,7 @@
 		42CACA6325A9B2E100E38C83 /* DataFetcherService */ = {
 			isa = PBXGroup;
 			children = (
+				422A829D25F4C9EE004A6B14 /* StorageService.swift */,
 			);
 			name = DataFetcherService;
 			sourceTree = "<group>";
@@ -246,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				42DC3FF225BC7405008D38F0 /* PickerView */,
-				42558D3925BF1B70004AD451 /* CurrencyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,7 +407,6 @@
 				4252EE9425A1BBFB001F1227 /* ApplicationAboutConfigurator.swift in Sources */,
 				4252EEB925A1E70C001F1227 /* MainViewController.swift in Sources */,
 				42F11A8E25B1E09500BD0F26 /* TextField.swift in Sources */,
-				42558D3A25BF1B70004AD451 /* CurrencyView.swift in Sources */,
 				4252EE7725A1B59D001F1227 /* AppDelegate.swift in Sources */,
 				420156F725B4615B0009C549 /* UIViewController+UITableView+UICollectionView.+UIView.swift in Sources */,
 				422A829A25F4C238004A6B14 /* CurrencyService.swift in Sources */,
@@ -430,7 +423,6 @@
 				4252EE9825A1BF5C001F1227 /* ApplicationAboutProtocols.swift in Sources */,
 				426F06DD25B8A27B00C434E6 /* MainConfigurator.swift in Sources */,
 				426F06DA25B8A10600C434E6 /* MainProtocols.swift in Sources */,
-				426F06D625B8996200C434E6 /* Builder.swift in Sources */,
 				42F11A9125B1E30900BD0F26 /* Label.swift in Sources */,
 				4252EEB025A1D8DC001F1227 /* NetworkServiceProtocol.swift in Sources */,
 				4252EEA425A1C13B001F1227 /* ApplicationAboutRouter.swift in Sources */,

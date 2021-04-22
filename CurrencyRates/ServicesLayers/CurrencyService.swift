@@ -76,12 +76,13 @@ class CurrencyService: CurrencyServiceProtocol {
         
         if let dictResults = dict["results"] as! [String: [String: String]]? {
             if dictResults.count > 0 {
-                
                 for (_, value) in dictResults {
-                    if let fullName = value["currencyName"], let shortName = value["id"] {
-                        let currency = Currency(fullName: fullName, shortName: shortName, ratio: 1, index: 0)
+                    if let fullName = value["currencyName"],
+                       let shortName = value["id"],
+                       let ratio = Double(value["ratio"] ?? "1")
+                    {
+                        let currency = Currency(fullName: fullName, shortName: shortName, ratio: ratio, index: 0)
                         currencies.append(currency)
-                        
                     }
                 }
                 completion(nil)
@@ -128,18 +129,17 @@ class CurrencyService: CurrencyServiceProtocol {
     }
     
     func saveOutputCurrencyRatio(with dict: [String: Any], completion: @escaping (CurrencyError?) -> Swift.Void) {
-        let key = "\(inputCurrency.shortName)_\(outputCurrency.shortName)"
+        var currencyValue: Double?
         
-        if let dictValue = dict[key] as? [String: Double]? {
-            if dictValue?.count ?? 0 > 0 {
-                
-                if let val = dictValue?["val"] {
-                    outputCurrency.ratio = val
-                    storageService.saveOutputCurrency(with: outputCurrency)
-                    completion(nil)
-                    return
-                }
-            }
+        for (_, value) in dict {
+            currencyValue = value as? Double ?? 1.0
+        }
+        
+        if let currencyValue = currencyValue {
+            outputCurrency.ratio = currencyValue
+            storageService.saveOutputCurrency(with: outputCurrency)
+            completion(nil)
+            return
         }
         completion(CurrencyError(description: "Error in saving ratio for currency"))
     }

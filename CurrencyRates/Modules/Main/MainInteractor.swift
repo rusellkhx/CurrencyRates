@@ -123,20 +123,25 @@ class MainInteractor: MainInteractorProtocol {
                     case .inputCurrencyChanging:
                         self.currencyService?.inputCurrency = newCurrency
                         self.output?.inputCurrencyNameUpdated()
+                        self.output?.updateOutputValue()
+                        self.output?.updateRateText()
                     case .outputCurrencyChanging:
                         self.currencyService?.outputCurrency = newCurrency
                         self.output?.outputCurrencyNameUpdated()
+                        self.output?.updateOutputValue()
+                        self.output?.updateRateText()
                     }
                 }
                 
                 self.currencyService?.saveOutputCurrencyRatio(with: dictResponse, completion: { [weak self] (error) in
                     guard let self = self else { return }
+
                     if let error = error {
                         self.presenter?.showAlertView(with: error.localizedDesc)
                         return
                     }
-                    self.presenter?.updateOutputValue()
-                    self.presenter?.updateRateText()
+                    self.output?.updateOutputValue()
+                    self.output?.updateRateText()
                 })
             }
         }

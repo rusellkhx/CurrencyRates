@@ -38,10 +38,7 @@ protocol MainPresenterProtocol: class {
     //func showHUD()
     //func showLoadCurrenciesButton()
     //func hideHUD()
-    func updateOutputValue()
     func showAlertView(with text: String)
-
-    func updateRateText()
 }
 
 protocol MainInteractorProtocol: class {
@@ -62,6 +59,8 @@ protocol MainInteractorProtocol: class {
 protocol MainInteractorProtocolOutput: class {
     func inputCurrencyNameUpdated()
     func outputCurrencyNameUpdated()
+    func updateOutputValue()
+    func updateRateText()
 }
 
 protocol MainRouterProtocol: class {
