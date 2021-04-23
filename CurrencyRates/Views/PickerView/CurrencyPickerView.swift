@@ -115,7 +115,6 @@ class CurrencyPickerView: UIView, CurrencyPickerViewProtocol {
         pickerView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(view.snp.bottom)
-            make.width.equalTo(375)
             make.height.equalTo(165)
         }
         

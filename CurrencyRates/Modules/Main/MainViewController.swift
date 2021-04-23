@@ -268,7 +268,6 @@ extension MainViewController {
             make.left.equalTo(intoView).inset(5)
             make.top.bottom.equalTo(intoView)
             make.right.equalTo(inputCurrencyButton.snp.left)
-            make.width.equalTo(200)
             make.height.equalTo(70)
         }
         
@@ -282,7 +281,6 @@ extension MainViewController {
             make.left.equalTo(outoView).inset(5)
             make.top.bottom.equalTo(outoView)
             make.right.equalTo(outputCurrencyButton.snp.left)
-            make.width.equalTo(200)
             make.height.equalTo(70)
         }
         
